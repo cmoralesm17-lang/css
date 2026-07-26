@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 11 - Height and Width</title>
+    <style>
+        h2 { margin-top: 40px; }
+
+        .ejemplo1 {
+            height: 70px;
+            width: 100%;
+            background-color: powderblue;
+        }
+
+        .ejemplo2 {
+            height: 200px;
+            width: 50%;
+            background-color: powderblue;
+        }
+
+        .ejemplo3 {
+            height: 100px;
+            width: 500px;
+            background-color: powderblue;
+        }
+
+        .con-padding-borde {
+            height: 100px;
+            width: 200px;
+            padding: 20px;
+            border: 5px solid black;
+            background-color: lightyellow;
+        }
+
+        .con-width {
+            width: 600px;
+            background-color: lightsalmon;
+        }
+
+        .con-maxwidth {
+            max-width: 600px;
+            background-color: lightsalmon;
+        }
+
+        .comparar1 {
+            max-width: 500px;
+            background-color: powderblue;
+        }
+        .comparar2 {
+            width: 500px;
+            background-color: powderblue;
+        }
+
+        .width-y-maxwidth {
+            width: 100%;
+            max-width: 900px;
+            background-color: powderblue;
+        }
+
+        .minheight {
+            min-height: 150px;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Leccion CSS 11 - Height and Width</h1>
+
+    <h2>1. Altura y ancho basico</h2>
+    <div class="ejemplo1">Este elemento tiene height: 70px y width: 100%.</div>
+
+    <h2>2. Altura fija, ancho en porcentaje</h2>
+    <div class="ejemplo2">Este elemento tiene height: 200px y width: 50%.</div>
+
+    <h2>3. Altura y ancho fijos en pixeles</h2>
+    <div class="ejemplo3">Este elemento tiene height: 100px y width: 500px.</div>
+
+    <h2>4. Height/width NO incluyen padding ni borde (importante)</h2>
+    <div class="con-padding-borde">
+        Este div tiene height:100px y width:200px definidos, MAS padding:20px y border:5px. El tamaño visual final es mayor a 100x200, porque el padding y el borde se agregan por fuera del area de contenido.
+    </div>
+
+    <h2>Valores posibles para height y width</h2>
+    <ul>
+        <li><b>auto</b> - valor por defecto, el navegador calcula el tamaño</li>
+        <li><b>length</b> - un valor fijo en px, cm, em, etc.</li>
+        <li><b>%</b> - un porcentaje del tamaño del contenedor padre</li>
+        <li><b>initial</b> - vuelve al valor por defecto</li>
+        <li><b>inherit</b> - hereda el valor del elemento padre</li>
+    </ul>
+
+    <h2>5. width vs max-width (achica la ventana del navegador para ver la diferencia)</h2>
+    <div class="con-width">Este div tiene width:600px fijo. Si la ventana del navegador es mas angosta que 600px, apareceria una barra de scroll horizontal.</div>
+    <br>
+    <div class="con-maxwidth">Este div tiene max-width:600px. Si la ventana es mas angosta, este div se encoge para adaptarse, sin generar scroll horizontal.</div>
+
+    <h2>6. Comparacion directa: max-width vs width</h2>
+    <div class="comparar1">Este div1 tiene max-width: 500px</div>
+    <div class="comparar2">Este div2 tiene width: 500px</div>
+
+    <h2>7. Cuando width Y max-width estan juntos, gana max-width si width es mayor</h2>
+    <div class="width-y-maxwidth">Este div tiene width:100% (podria ser muy ancho en pantallas grandes) PERO max-width:900px, asi que nunca crecera mas alla de 900px, sin importar que tan ancha sea la pantalla.</div>
+
+    <h2>8. min-height (bonus: la misma logica aplica a min-width y max-height)</h2>
+    <div class="minheight">Este div tiene min-height:150px. Aunque el contenido sea poco, nunca sera mas bajo que 150px. Si el contenido crece mas alla de eso, el div crece con el contenido normalmente.</div>
+
+</body>
+</html>
