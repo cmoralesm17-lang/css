@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 17 - Links</title>
+    <style>
+        h2 { margin-top: 40px; }
+
+        .grupo1 a { color: hotpink; background-color: yellow; font-weight: bold; }
+
+        .grupo2 a:link { color: red; }
+        .grupo2 a:visited { color: green; }
+        .grupo2 a:hover { color: hotpink; }
+        .grupo2 a:active { color: blue; }
+
+        .grupo3 a:link { text-decoration: none; }
+        .grupo3 a:visited { text-decoration: none; }
+        .grupo3 a:hover { text-decoration: underline; }
+        .grupo3 a:active { text-decoration: underline; }
+
+        .grupo4 a:link { background-color: yellow; }
+        .grupo4 a:visited { background-color: cyan; }
+        .grupo4 a:hover { background-color: lightgreen; }
+        .grupo4 a:active { background-color: hotpink; }
+
+        a.uno:link {color:red;}
+        a.uno:visited {color:blue;}
+        a.uno:hover {color:orange;}
+
+        a.dos:link {color:red;}
+        a.dos:visited {color:blue;}
+        a.dos:hover {font-size:150%;}
+
+        a.tres:link {color:red;}
+        a.tres:visited {color:blue;}
+        a.tres:hover {background:lightgreen;}
+
+        a.cuatro:link {color:red;}
+        a.cuatro:visited {color:blue;}
+        a.cuatro:hover {font-family:monospace;}
+
+        a.cinco:link {color:red; text-decoration:none;}
+        a.cinco:visited {color:blue; text-decoration:none;}
+        a.cinco:hover {text-decoration:underline;}
+
+        .boton1:link, .boton1:visited {
+            background-color: #f44336;
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .boton1:hover, .boton1:active {
+            background-color: darkred;
+        }
+
+        .boton2:link, .boton2:visited {
+            background-color: white;
+            color: black;
+            border: 2px solid green;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .boton2:hover, .boton2:active {
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Leccion CSS 17 - Links</h1>
+
+    <h2>1. Estilo basico para todos los enlaces</h2>
+    <p class="grupo1"><a href="css-01-introduccion.html">Enlace rosado con fondo amarillo y negrita</a></p>
+
+    <h2>2. Los 4 estados del enlace (color)</h2>
+    <p class="grupo2"><a href="css-01-introduccion.html">Pasa el mouse y haz clic para ver los 4 colores distintos</a></p>
+    <p>link (sin visitar) = rojo | visited (ya visitado) = verde | hover (mouse encima) = rosado | active (en el clic) = azul</p>
+
+    <h2>3. Quitar/agregar subrayado segun estado</h2>
+    <p class="grupo3"><a href="css-01-introduccion.html">Este enlace no tiene subrayado normalmente, pero SI al pasar el mouse</a></p>
+
+    <h2>4. Color de fondo segun estado</h2>
+    <p class="grupo4"><a href="css-01-introduccion.html">Fondo amarillo normal, cyan si visitado, verde claro en hover</a></p>
+
+    <h2>5. Variaciones de efecto hover</h2>
+    <p><a class="uno" href="css-01-introduccion.html">Hover cambia el color a naranja</a></p>
+    <p><a class="dos" href="css-01-introduccion.html">Hover agranda el texto (150%)</a></p>
+    <p><a class="tres" href="css-01-introduccion.html">Hover agrega fondo verde claro</a></p>
+    <p><a class="cuatro" href="css-01-introduccion.html">Hover cambia la fuente a monospace</a></p>
+    <p><a class="cinco" href="css-01-introduccion.html">Sin subrayado normalmente, con subrayado en hover</a></p>
+
+    <h2>6. Tipos de cursor</h2>
+    <span style="cursor: auto">auto</span><br>
+    <span style="cursor: crosshair">crosshair</span><br>
+    <span style="cursor: default">default</span><br>
+    <span style="cursor: help">help</span><br>
+    <span style="cursor: move">move</span><br>
+    <span style="cursor: pointer">pointer</span><br>
+    <span style="cursor: progress">progress</span><br>
+    <span style="cursor: text">text</span><br>
+    <span style="cursor: wait">wait</span>
+    <p>Pasa el mouse sobre cada palabra para ver como cambia el cursor. "pointer" es el que normalmente se usa para simular que algo es clicable.</p>
+
+    <h2>7. Enlaces como botones (relleno)</h2>
+    <a class="boton1" href="css-01-introduccion.html">Boton Relleno</a>
+
+    <h2>8. Enlaces como botones (con borde)</h2>
+    <a class="boton2" href="css-01-introduccion.html">Boton con Borde</a>
+
+</body>
+</html>
