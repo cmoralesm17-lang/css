@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 15 - Fonts</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <style>
+        h2 { margin-top: 45px; }
+        h3 { margin-top: 20px; }
+
+        /* Font family */
+        .p1 { font-family: "Times New Roman", Times, serif; }
+        .p2 { font-family: Arial, Helvetica, sans-serif; }
+        .p3 { font-family: "Lucida Console", "Courier New", monospace; }
+
+        /* Familias genericas */
+        .serif-ej { font-family: Georgia, serif; }
+        .sansserif-ej { font-family: Arial, sans-serif; }
+        .monospace-ej { font-family: "Courier New", monospace; }
+        .cursive-ej { font-family: "Brush Script MT", cursive; }
+        .fantasy-ej { font-family: Copperplate, fantasy; }
+
+        /* Font style */
+        p.normal { font-style: normal; }
+        p.italic { font-style: italic; }
+        p.oblique { font-style: oblique; }
+
+        /* Font weight */
+        p.peso-normal { font-weight: normal; }
+        p.peso-light { font-weight: lighter; }
+        p.peso-bold { font-weight: bold; }
+        p.peso-900 { font-weight: 900; }
+
+        /* Font variant */
+        p.variant-normal { font-variant: normal; }
+        p.variant-small { font-variant: small-caps; }
+
+        /* Font size */
+        .tam-px { font-size: 16px; }
+        .tam-em { font-size: 1.5em; }
+        .tam-rem { font-size: 1.5rem; }
+        .tam-vw { font-size: 5vw; }
+
+        /* Font pairing */
+        .par-titulo { font-family: Georgia, serif; }
+        .par-texto { font-family: Verdana, sans-serif; }
+
+        .boss-body {
+            background-color: #222;
+            font-family: Verdana, sans-serif;
+            font-size: 16px;
+            color: gray;
+            padding: 15px;
+        }
+        .boss-h1 {
+            font-family: Georgia, serif;
+            font-size: 45px;
+            color: white;
+        }
+
+        /* Google font */
+        .fuente-google {
+            font-family: "Sofia", sans-serif;
+            font-size: 28px;
+        }
+
+        /* Font shorthand */
+        p.short1 { font: 20px Arial, sans-serif; }
+        p.short2 { font: italic bold 16px Arial, sans-serif; }
+        p.short3 { font: italic small-caps bold 15px/30px Georgia, serif; }
+    </style>
+</head>
+<body>
+
+    <h1>Leccion CSS 15 - Fonts</h1>
+
+    <h2>1. font-family (con fuentes de respaldo)</h2>
+    <p class="p1">Este parrafo usa Times New Roman, con Times y serif como respaldo.</p>
+    <p class="p2">Este parrafo usa Arial, con Helvetica y sans-serif como respaldo.</p>
+    <p class="p3">Este parrafo usa Lucida Console, con Courier New y monospace como respaldo.</p>
+
+    <h2>2. Las 5 familias genericas</h2>
+    <p class="serif-ej">Serif (Georgia) - tiene pequeños trazos en los bordes de cada letra, se ve formal.</p>
+    <p class="sansserif-ej">Sans-serif (Arial) - lineas limpias sin trazos extra, se ve moderno.</p>
+    <p class="monospace-ej">Monospace (Courier New) - todas las letras tienen el mismo ancho fijo.</p>
+    <p class="cursive-ej">Cursive (Brush Script) - imita la escritura a mano.</p>
+    <p class="fantasy-ej">Fantasy (Copperplate) - fuentes decorativas.</p>
+
+    <h2>3. Fuentes web safe (con respaldo)</h2>
+    <p style="font-family: Tahoma, Verdana, sans-serif;">Tahoma con respaldo Verdana y sans-serif.</p>
+    <p style="font-family: 'Trebuchet MS', Helvetica, sans-serif;">Trebuchet MS con respaldo.</p>
+    <p style="font-family: Garamond, serif;">Garamond con respaldo serif.</p>
+    <p>Ninguna fuente es 100% segura en todos los dispositivos, por eso siempre se agregan fuentes de respaldo, terminando con una familia generica.</p>
+
+    <h2>4. font-style</h2>
+    <p class="normal">Texto normal (font-style: normal)</p>
+    <p class="italic">Texto en cursiva (font-style: italic)</p>
+    <p class="oblique">Texto inclinado (font-style: oblique)</p>
+
+    <h2>5. font-weight</h2>
+    <p class="peso-normal">Peso normal</p>
+    <p class="peso-light">Peso mas ligero (lighter)</p>
+    <p class="peso-bold">Peso bold</p>
+    <p class="peso-900">Peso 900 (el mas grueso)</p>
+
+    <h2>6. font-variant</h2>
+    <p class="variant-normal">Texto normal</p>
+    <p class="variant-small">TEXTO EN SMALL-CAPS (minusculas se ven como mayusculas pequeñas)</p>
+
+    <h2>7. font-size con distintas unidades</h2>
+    <p class="tam-px">Tamaño con px (16px) - control fijo y preciso.</p>
+    <p class="tam-em">Tamaño con em (1.5em) - relativo al tamaño del padre.</p>
+    <p class="tam-rem">Tamaño con rem (1.5rem) - relativo al tamaño raiz (html).</p>
+    <p class="tam-vw">Tamaño con vw (5vw) - relativo al ancho de la ventana, cambia si redimensionas el navegador.</p>
+
+    <h2>8. Emparejamiento de fuentes (font pairing)</h2>
+    <h3 class="par-titulo">Titulo con Georgia (serif)</h3>
+    <p class="par-texto">Texto con Verdana (sans-serif). Combinar serif con sans-serif es un emparejamiento clasico y seguro.</p>
+
+    <h3>Regla de "un solo jefe" (una fuente domina)</h3>
+    <div class="boss-body">
+        <h1 class="boss-h1">Georgia es el jefe aqui</h1>
+        <p>El resto del texto usa Verdana, mas pequeño y en gris, para que el titulo en Georgia destaque claramente como jerarquia principal.</p>
+    </div>
+
+    <h2>9. Google Fonts</h2>
+    <p class="fuente-google">Este texto usa la fuente "Sofia" de Google Fonts, conectada con un &lt;link&gt; en el head.</p>
+    <pre>&lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia"&gt;</pre>
+    <p>Siempre se recomienda agregar una fuente generica de respaldo (sans-serif, serif) despues del nombre de la fuente de Google.</p>
+
+    <h2>10. Propiedad abreviada (font shorthand)</h2>
+    <p class="short1">font: 20px Arial, sans-serif; (solo tamaño y familia, los requeridos)</p>
+    <p class="short2">font: italic bold 16px Arial, sans-serif;</p>
+    <p class="short3">font: italic small-caps bold 15px/30px Georgia, serif; (con line-height incluido)</p>
+    <p>Reglas: font-size y font-family son obligatorios. Si hay line-height, va justo despues del font-size separado por "/". font-family siempre va al final.</p>
+
+</body>
+</html>
