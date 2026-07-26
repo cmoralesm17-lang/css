@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 20 - Display</title>
+    <style>
+        h2 { margin-top: 40px; }
+
+        .li-horizontal li {
+            display: inline;
+            margin-right: 15px;
+            background-color: lightblue;
+            padding: 5px 10px;
+        }
+
+        .span-bloque span {
+            display: block;
+            background-color: lightyellow;
+            margin-bottom: 5px;
+        }
+
+        p.ex1 { display: none; background-color: pink; }
+        p.ex2 { display: inline; background-color: lightgreen; }
+        p.ex3 { display: block; background-color: lightblue; }
+        p.ex4 { display: inline-block; background-color: khaki; width: 150px; }
+        p.ex5 { display: flex; background-color: lightpink; }
+        p.ex6 { display: grid; background-color: lightgray; }
+
+        #panel {
+            display: none;
+            background-color: #eee;
+            padding: 15px;
+            border: 1px solid black;
+            margin-top: 10px;
+        }
+
+        h1.hidden-display { display: none; }
+        h1.hidden-visibility { visibility: hidden; }
+    </style>
+</head>
+<body>
+
+    <h1>Leccion CSS 20 - Display</h1>
+
+    <h2>1. Elementos block vs inline (por defecto)</h2>
+    <div style="background-color:lightblue;">Este div es block (ocupa todo el ancho, salta de linea)</div>
+    <span style="background-color:lightyellow;">Este span es inline</span>
+    <span style="background-color:lightyellow;">y este otro span sigue en la misma linea</span>
+
+    <h2>2. Cambiar li a inline (menu horizontal clasico)</h2>
+    <ul class="li-horizontal">
+        <li>Inicio</li>
+        <li>Servicios</li>
+        <li>Contacto</li>
+    </ul>
+    <p>Los li normalmente son block (uno debajo del otro), pero con display:inline se ponen en fila, como un menu de navegacion.</p>
+
+    <h2>3. Cambiar span a block</h2>
+    <div class="span-bloque">
+        <span>Este span ahora es block</span>
+        <span>y este tambien, por eso cada uno ocupa su propia linea</span>
+    </div>
+
+    <h2>4. Los 6 valores mas comunes de display</h2>
+    <p class="ex2">display: inline (no rompe linea)</p>
+    <p class="ex3">display: block (ocupa todo el ancho)</p>
+    <p class="ex4">display: inline-block (no rompe linea, pero acepta width/height/padding)</p>
+    <p class="ex5">display: flex (contenedor flexible)</p>
+    <p class="ex6">display: grid (contenedor de cuadricula)</p>
+    <p>(display:none no se muestra aqui a proposito - es el ejemplo de la siguiente seccion)</p>
+
+    <h2>5. display:none con JavaScript (mostrar/ocultar)</h2>
+    <button onclick="document.getElementById('panel').style.display='block'">Mostrar panel</button>
+    <div id="panel">Este panel estaba oculto con display:none, y ahora es visible porque JavaScript cambio su estilo a block.</div>
+
+    <h2>6. Alternar mostrar/ocultar (toggle)</h2>
+    <button onclick="alternarPanel()">Mostrar / Ocultar panel</button>
+    <div id="panel2" style="display:none; background-color:#eee; padding:15px; border:1px solid black; margin-top:10px;">
+        Este panel se muestra y oculta alternando cada vez que haces clic en el boton.
+    </div>
+    <script>
+        function alternarPanel() {
+            var x = document.getElementById("panel2");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+
+    <h2>7. display:none vs visibility:hidden</h2>
+    <h3 class="hidden-display">Este titulo esta oculto con display:none</h3>
+    <p>El titulo de arriba (display:none) NO ocupa espacio, es como si no existiera en la pagina.</p>
+
+    <h3 class="hidden-visibility">Este titulo esta oculto con visibility:hidden</h3>
+    <p>El titulo de arriba (visibility:hidden) SI ocupa su espacio en blanco, aunque no se vea el texto (nota el espacio vacio antes de este parrafo).</p>
+
+</body>
+</html>
