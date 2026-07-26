@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 16 - Icons</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        h2 { margin-top: 40px; }
+        .material-icons {
+            font-size: 36px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .icono-grande { font-size: 60px; }
+        .icono-color { color: dodgerblue; }
+        .icono-sombra { text-shadow: 2px 2px 5px gray; }
+    </style>
+</head>
+<body>
+
+    <h1>Leccion CSS 16 - Icons</h1>
+
+    <h2>Como funcionan los iconos en la web</h2>
+    <p>Los iconos se agregan usando una libreria de iconos: se conecta un archivo externo (con &lt;link&gt; o &lt;script&gt;) en el head, y luego cada icono es simplemente una etiqueta &lt;i&gt; o &lt;span&gt; con una clase especial. Son vectores escalables, por lo que se pueden personalizar con CSS igual que cualquier texto (tamaño, color, sombra).</p>
+
+    <h2>1. Font Awesome (referencia - requiere cuenta propia)</h2>
+    <p>Para usar Font Awesome hay que crear una cuenta gratuita en fontawesome.com y obtener un codigo personal (kit) para pegar en el head, algo asi:</p>
+    <pre>&lt;script src="https://kit.fontawesome.com/tu-codigo.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
+    <p>Y luego los iconos se usan asi:</p>
+    <pre>
+&lt;i class="fas fa-cloud"&gt;&lt;/i&gt;
+&lt;i class="fas fa-heart"&gt;&lt;/i&gt;
+&lt;i class="fas fa-car"&gt;&lt;/i&gt;
+    </pre>
+    <p>No lo active en este archivo porque necesita un codigo de cuenta personal que no tengo, pero la logica es identica a los iconos de Google que si funcionan abajo.</p>
+
+    <h2>2. Google Icons (Material Icons) - funcionando</h2>
+    <p>Estos si funcionan directamente, sin necesidad de cuenta, con solo este link en el head:</p>
+    <pre>&lt;link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"&gt;</pre>
+
+    <i class="material-icons">cloud</i>
+    <i class="material-icons">favorite</i>
+    <i class="material-icons">attachment</i>
+    <i class="material-icons">computer</i>
+    <i class="material-icons">traffic</i>
+
+    <h2>3. Personalizando iconos con CSS</h2>
+    <p>Como son texto/vectores, se pueden estilizar igual que cualquier otro elemento:</p>
+
+    <h3>Tamaño</h3>
+    <i class="material-icons icono-grande">star</i>
+
+    <h3>Color</h3>
+    <i class="material-icons icono-color">thumb_up</i>
+
+    <h3>Sombra</h3>
+    <i class="material-icons icono-sombra">notifications</i>
+
+    <h3>Combinado (tamaño + color + sombra)</h3>
+    <i class="material-icons icono-grande icono-color icono-sombra">rocket_launch</i>
+
+</body>
+</html>
