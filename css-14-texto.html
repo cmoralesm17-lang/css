@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 14 - Text</title>
+    <style>
+        h2 { margin-top: 45px; }
+        h3 { margin-top: 20px; }
+
+        /* Color de texto */
+        .cuerpo-color { background-color: lightgrey; padding: 10px; }
+        .cuerpo-color h1 { background-color: black; color: white; padding: 5px; }
+        .cuerpo-color div { background-color: blue; color: white; padding: 5px; }
+
+        /* Alineacion */
+        .align-center { text-align: center; }
+        .align-left { text-align: left; }
+        .align-right { text-align: right; }
+        .align-justify { text-align: justify; }
+
+        .last-right { text-align-last: right; }
+        .last-center { text-align-last: center; }
+        .last-justify { text-align-last: justify; }
+
+        img.va-baseline { vertical-align: baseline; }
+        img.va-top { vertical-align: text-top; }
+        img.va-bottom { vertical-align: text-bottom; }
+        img.va-sub { vertical-align: sub; }
+        img.va-super { vertical-align: super; }
+
+        .rtl { direction: rtl; unicode-bidi: bidi-override; }
+
+        /* Decoracion */
+        .dec-over { text-decoration-line: overline; }
+        .dec-through { text-decoration-line: line-through; }
+        .dec-under { text-decoration-line: underline; }
+        .dec-both { text-decoration-line: overline underline; }
+
+        .dec-color1 { text-decoration-line: overline; text-decoration-color: red; }
+        .dec-color2 { text-decoration-line: line-through; text-decoration-color: blue; }
+        .dec-color3 { text-decoration-line: underline; text-decoration-color: green; }
+
+        .dec-style1 { text-decoration-line: underline; text-decoration-style: solid; }
+        .dec-style2 { text-decoration-line: underline; text-decoration-style: double; }
+        .dec-style3 { text-decoration-line: underline; text-decoration-style: dotted; }
+        .dec-style4 { text-decoration-line: underline; text-decoration-style: dashed; }
+        .dec-style5 { text-decoration-line: underline; text-decoration-style: wavy; text-decoration-color: red; }
+
+        .dec-thick1 { text-decoration-line: underline; text-decoration-thickness: auto; }
+        .dec-thick2 { text-decoration-line: underline; text-decoration-thickness: 5px; }
+        .dec-thick3 { text-decoration-line: underline; text-decoration-thickness: 25%; }
+
+        .dec-shorthand { text-decoration: underline red double 3px; }
+        .sin-subrayado { text-decoration: none; }
+
+        /* Transformacion */
+        .mayus { text-transform: uppercase; }
+        .minus { text-transform: lowercase; }
+        .capital { text-transform: capitalize; }
+
+        /* Espaciado */
+        .indentado { text-indent: 50px; }
+        .letras-espaciadas { letter-spacing: 5px; }
+        .letras-juntas { letter-spacing: -2px; }
+        .linea-baja { line-height: 0.8; }
+        .linea-alta { line-height: 1.8; }
+        .palabras-espaciadas { word-spacing: 10px; }
+        .palabras-juntas { word-spacing: -2px; }
+        .sin-salto {
+            white-space: nowrap;
+            width: 200px;
+            overflow: hidden;
+            border: 1px solid black;
+        }
+
+        /* Sombra */
+        .sombra1 { text-shadow: 2px 2px; }
+        .sombra2 { text-shadow: 2px 2px red; }
+        .sombra3 { text-shadow: 2px 2px 5px red; }
+        .sombra-blanca {
+            background-color: black;
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+            padding: 10px;
+        }
+        .sombra-neon-roja {
+            background-color: black;
+            color: white;
+            text-shadow: 0 0 3px #ff0000;
+            padding: 10px;
+        }
+        .sombra-neon-doble {
+            background-color: black;
+            color: white;
+            text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Leccion CSS 14 - Text</h1>
+
+    <h2>1. Color de texto</h2>
+    <div class="cuerpo-color">
+        <h1>Encabezado con fondo negro, texto blanco</h1>
+        <div>Este div tiene fondo azul, texto blanco</div>
+        <p>Todo este bloque tiene fondo gris claro (background-color) y texto azul (color), definidos en el selector .cuerpo-color.</p>
+    </div>
+    <p><b>Nota de accesibilidad:</b> siempre asegurar buen contraste entre texto y fondo, para personas con problemas de vision.</p>
+
+    <h2>2. Alineacion de texto (text-align)</h2>
+    <h3 class="align-center">Encabezado centrado</h3>
+    <h3 class="align-left">Encabezado a la izquierda</h3>
+    <h3 class="align-right">Encabezado a la derecha</h3>
+    <div class="align-justify">Este texto esta justificado, lo que significa que cada linea se estira para tener el mismo ancho, con margenes izquierdo y derecho parejos, como en revistas y periodicos. Se necesita suficiente texto para notar el efecto de justificacion en varias lineas completas.</div>
+
+    <h3>text-align-last (alinea solo la ultima linea)</h3>
+    <p class="last-right">Este parrafo tiene su ultima linea alineada a la derecha, mientras el resto del texto sigue el flujo normal hacia la izquierda, y esta es la ultima linea que se ve distinto.</p>
+    <p class="last-center">Este parrafo tiene su ultima linea centrada, mientras el resto del texto sigue el flujo normal, y esta es la ultima linea que se ve distinto.</p>
+
+    <h3>vertical-align (con imagenes en linea de texto)</h3>
+    <p>Baseline: <img class="va-baseline" src="https://www.w3schools.com/css/smiley.gif" width="20" alt="smiley"> texto normal</p>
+    <p>Text-top: <img class="va-top" src="https://www.w3schools.com/css/smiley.gif" width="20" alt="smiley"> texto normal</p>
+    <p>Text-bottom: <img class="va-bottom" src="https://www.w3schools.com/css/smiley.gif" width="20" alt="smiley"> texto normal</p>
+    <p>Sub: <img class="va-sub" src="https://www.w3schools.com/css/smiley.gif" width="20" alt="smiley"> texto normal</p>
+    <p>Super: <img class="va-super" src="https://www.w3schools.com/css/smiley.gif" width="20" alt="smiley"> texto normal</p>
+
+    <h3>Direccion del texto (direction)</h3>
+    <p class="rtl">Este texto se escribe de derecha a izquierda (direction: rtl).</p>
+
+    <h2>3. Decoracion de texto (text-decoration)</h2>
+    <h3 class="dec-over">Linea por arriba (overline)</h3>
+    <h3 class="dec-through">Linea a traves (line-through)</h3>
+    <h3 class="dec-under">Linea por debajo (underline)</h3>
+    <p class="dec-both">Este parrafo tiene overline y underline al mismo tiempo.</p>
+
+    <h4>Color de la linea de decoracion</h4>
+    <h3 class="dec-color1">Overline rojo</h3>
+    <h3 class="dec-color2">Line-through azul</h3>
+    <h3 class="dec-color3">Underline verde</h3>
+
+    <h4>Estilo de la linea de decoracion</h4>
+    <h3 class="dec-style1">Underline solid</h3>
+    <h3 class="dec-style2">Underline double</h3>
+    <h3 class="dec-style3">Underline dotted</h3>
+    <p class="dec-style4">Underline dashed</p>
+    <p class="dec-style5">Underline wavy rojo</p>
+
+    <h4>Grosor de la linea de decoracion</h4>
+    <h3 class="dec-thick1">Underline thickness auto</h3>
+    <h3 class="dec-thick2">Underline thickness 5px</h3>
+    <h3 class="dec-thick3">Underline thickness 25%</h3>
+
+    <h4>Propiedad abreviada</h4>
+    <p class="dec-shorthand">text-decoration: underline red double 3px;</p>
+
+    <h4>Quitar el subrayado de un enlace</h4>
+    <a href="css-01-introduccion.html" class="sin-subrayado">Este enlace no tiene subrayado (text-decoration: none)</a>
+
+    <h2>4. Transformacion de texto (text-transform)</h2>
+    <p class="mayus">este texto se muestra en mayusculas</p>
+    <p class="minus">ESTE TEXTO SE MUESTRA EN MINUSCULAS</p>
+    <p class="capital">este texto tiene cada palabra con mayuscula inicial</p>
+    <p>Importante: text-transform solo cambia la VISUALIZACION, el texto original en el HTML no cambia.</p>
+
+    <h2>5. Espaciado de texto</h2>
+    <h3>text-indent (sangria en la primera linea)</h3>
+    <p class="indentado">Este parrafo tiene la primera linea con sangria de 50px, el resto del texto sigue el margen normal cuando continua en la siguiente linea.</p>
+
+    <h3>letter-spacing (espacio entre letras)</h3>
+    <h4 class="letras-espaciadas">Letras separadas</h4>
+    <h4 class="letras-juntas">Letras juntas (valor negativo)</h4>
+
+    <h3>line-height (espacio entre lineas)</h3>
+    <p class="linea-baja">Esta es una linea de texto con line-height bajo (0.8), las lineas quedan mas juntas entre si cuando el texto ocupa varias lineas.</p>
+    <p class="linea-alta">Esta es una linea de texto con line-height alto (1.8), las lineas quedan mas separadas entre si cuando el texto ocupa varias lineas.</p>
+
+    <h3>word-spacing (espacio entre palabras)</h3>
+    <p class="palabras-espaciadas">Estas palabras tienen mas espacio entre ellas de lo normal.</p>
+    <p class="palabras-juntas">Estas palabras tienen menos espacio entre ellas (valor negativo).</p>
+
+    <h3>white-space: nowrap (evita el salto de linea)</h3>
+    <p class="sin-salto">Este texto es demasiado largo para la caja pero no hace salto de linea.</p>
+
+    <h2>6. Sombra de texto (text-shadow)</h2>
+    <h3 class="sombra1">Sombra horizontal y vertical (2px 2px)</h3>
+    <h3 class="sombra2">Sombra con color (2px 2px red)</h3>
+    <h3 class="sombra3">Sombra con color y desenfoque (2px 2px 5px red)</h3>
+
+    <h3 class="sombra-blanca">Texto blanco con sombra negra difuminada</h3>
+    <h3 class="sombra-neon-roja">Efecto neon rojo</h3>
+    <h3 class="sombra-neon-doble">Efecto neon rojo y azul combinados (multiples sombras separadas por coma)</h3>
+
+</body>
+</html>
