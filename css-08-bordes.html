@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 08 - Borders</title>
+    <style>
+        h2 { margin-top: 40px; }
+        p.ejemplo { padding: 8px; width: 250px; }
+
+        p.dotted {border-style: dotted;}
+        p.dashed {border-style: dashed;}
+        p.solid {border-style: solid;}
+        p.double {border-style: double;}
+        p.groove {border-style: groove;}
+        p.ridge {border-style: ridge;}
+        p.inset {border-style: inset;}
+        p.outset {border-style: outset;}
+        p.none {border-style: none;}
+        p.hidden {border-style: hidden;}
+        p.mix {border-style: dotted dashed solid double;}
+
+        p.ancho1 { border-style: solid; border-width: 5px; }
+        p.ancho2 { border-style: solid; border-width: medium; }
+        p.ancho3 { border-style: dotted; border-width: 2px; }
+        p.ancho4 { border-style: dotted; border-width: thick; }
+
+        p.ancholados1 { border-style: solid; border-width: 5px 20px; }
+        p.ancholados2 { border-style: solid; border-width: 20px 5px; }
+        p.ancholados3 { border-style: solid; border-width: 25px 10px 4px 35px; }
+
+        p.color1 { border-style: solid; border-color: red; }
+        p.color2 { border-style: solid; border-color: green; }
+        p.color3 { border-style: dotted; border-color: blue; }
+        p.colorlados { border-style: solid; border-color: red green blue yellow; }
+        p.colorhex { border-style: solid; border-color: #ff0000; }
+        p.colorrgb { border-style: solid; border-color: rgb(0, 128, 0); }
+        p.colorhsl { border-style: solid; border-color: hsl(240, 100%, 50%); }
+
+        p.ladosindividuales {
+            border-top-style: dotted;
+            border-right-style: solid;
+            border-bottom-style: dotted;
+            border-left-style: solid;
+        }
+        p.abreviado2valores { border-style: dotted solid; }
+        p.abreviado3valores { border-style: dotted solid double; }
+        p.abreviado4valores { border-style: dotted solid double dashed; }
+
+        p.normal { border: 2px solid red; }
+        p.redondo5 { border: 2px solid red; border-radius: 5px; }
+        p.redondo10 { border: 2px solid red; border-radius: 10px; }
+        p.redondo20 { border: 2px solid red; border-radius: 20px; }
+    </style>
+</head>
+<body>
+
+    <h1>Leccion CSS 08 - Borders</h1>
+
+    <h2>1. border-style (todos los tipos)</h2>
+    <p class="ejemplo dotted">Borde dotted</p>
+    <p class="ejemplo dashed">Borde dashed</p>
+    <p class="ejemplo solid">Borde solid</p>
+    <p class="ejemplo double">Borde double</p>
+    <p class="ejemplo groove">Borde groove</p>
+    <p class="ejemplo ridge">Borde ridge</p>
+    <p class="ejemplo inset">Borde inset</p>
+    <p class="ejemplo outset">Borde outset</p>
+    <p class="ejemplo none">Borde none (sin borde)</p>
+    <p class="ejemplo hidden">Borde hidden (oculto)</p>
+    <p class="ejemplo mix">Borde mixto (dotted dashed solid double)</p>
+    <p>Nota importante: ninguna otra propiedad de borde (width, color) funciona si border-style no esta definido.</p>
+
+    <h2>2. border-width</h2>
+    <p class="ejemplo ancho1">border-width: 5px</p>
+    <p class="ejemplo ancho2">border-width: medium</p>
+    <p class="ejemplo ancho3">border-width: 2px</p>
+    <p class="ejemplo ancho4">border-width: thick</p>
+
+    <h3>Ancho especifico por lado</h3>
+    <p class="ejemplo ancholados1">5px arriba/abajo, 20px lados</p>
+    <p class="ejemplo ancholados2">20px arriba/abajo, 5px lados</p>
+    <p class="ejemplo ancholados3">25px arriba, 10px derecha, 4px abajo, 35px izquierda</p>
+
+    <h2>3. border-color</h2>
+    <p class="ejemplo color1">Borde rojo (nombre)</p>
+    <p class="ejemplo color2">Borde verde (nombre)</p>
+    <p class="ejemplo color3">Borde azul punteado (nombre)</p>
+
+    <h3>Color por lado (4 valores)</h3>
+    <p class="ejemplo colorlados">rojo arriba, verde derecha, azul abajo, amarillo izquierda</p>
+
+    <h3>Con HEX, RGB y HSL</h3>
+    <p class="ejemplo colorhex">border-color: #ff0000</p>
+    <p class="ejemplo colorrgb">border-color: rgb(0, 128, 0)</p>
+    <p class="ejemplo colorhsl">border-color: hsl(240, 100%, 50%)</p>
+
+    <h2>4. Bordes por lado individual</h2>
+    <p class="ejemplo ladosindividuales">border-top-style: dotted; border-right-style: solid; border-bottom-style: dotted; border-left-style: solid;</p>
+
+    <h3>Forma abreviada con multiples valores</h3>
+    <p class="ejemplo abreviado2valores">2 valores: dotted solid (arriba/abajo dotted, lados solid)</p>
+    <p class="ejemplo abreviado3valores">3 valores: dotted solid double (arriba dotted, lados solid, abajo double)</p>
+    <p class="ejemplo abreviado4valores">4 valores: dotted solid double dashed (arriba, derecha, abajo, izquierda en ese orden)</p>
+
+    <h2>5. Bordes redondeados (border-radius)</h2>
+    <p class="ejemplo normal">Borde normal (sin radius)</p>
+    <p class="ejemplo redondo5">border-radius: 5px</p>
+    <p class="ejemplo redondo10">border-radius: 10px</p>
+    <p class="ejemplo redondo20">border-radius: 20px</p>
+
+</body>
+</html>
