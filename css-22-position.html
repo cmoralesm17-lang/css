@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 22 - Position</title>
+    <style>
+        h2 { margin-top: 45px; }
+
+        div.static {
+            position: static;
+            border: 3px solid #73AD21;
+            padding: 10px;
+        }
+
+        div.relative {
+            position: relative;
+            left: 30px;
+            border: 3px solid #73AD21;
+            padding: 10px;
+        }
+
+        .contenedor-fixed {
+            height: 150px;
+            border: 1px dashed gray;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        div.fixed {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 250px;
+            border: 3px solid #73AD21;
+            background-color: white;
+            padding: 10px;
+        }
+
+        .padre-relativo {
+            position: relative;
+            width: 400px;
+            height: 200px;
+            border: 3px solid green;
+            padding: 10px;
+        }
+        .hijo-absoluto {
+            position: absolute;
+            top: 80px;
+            right: 0;
+            width: 180px;
+            height: 80px;
+            border: 3px solid red;
+            background-color: white;
+            padding: 5px;
+        }
+
+        .contenedor-imagen {
+            position: relative;
+            width: 400px;
+        }
+        .contenedor-imagen img { width: 100%; display: block; }
+        .texto-imagen {
+            position: absolute;
+            color: white;
+            font-weight: bold;
+            background-color: rgba(0,0,0,0.5);
+            padding: 5px 10px;
+        }
+        .abajo-izq { bottom: 10px; left: 10px; }
+        .arriba-izq { top: 10px; left: 10px; }
+        .arriba-der { top: 10px; right: 10px; }
+        .abajo-der { bottom: 10px; right: 10px; }
+        .centrado-img {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .contenedor-sticky {
+            height: 300px;
+            overflow-y: scroll;
+            border: 1px solid black;
+        }
+        div.sticky {
+            position: sticky;
+            top: 0;
+            background-color: green;
+            color: white;
+            padding: 10px;
+            border: 2px solid #4CAF50;
+        }
+
+        table.comparacion { border-collapse: collapse; width: 100%; }
+        table.comparacion th, table.comparacion td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        table.comparacion th { background-color: #04AA6D; color: white; }
+    </style>
+</head>
+<body>
+
+    <h1>Leccion CSS 22 - Position</h1>
+
+    <h2>1. position: static (por defecto)</h2>
+    <div class="static">Este div tiene position:static. Sigue el flujo normal de la pagina, top/left/right/bottom no le afectan.</div>
+
+    <h2>2. position: relative</h2>
+    <div class="relative">Este div tiene position:relative y left:30px, asi que se desplaza 30px a la derecha de donde estaria normalmente. El espacio original que ocupaba SI se mantiene reservado.</div>
+
+    <h2>3. position: fixed</h2>
+    <div class="contenedor-fixed">Este es contenido normal de la pagina. Mira la esquina inferior derecha de la PANTALLA (no de este recuadro) - ahi hay un elemento fixed que se queda ahi sin importar cuanto hagas scroll.</div>
+    <div class="fixed">Este div tiene position:fixed, siempre visible en la esquina inferior derecha de la ventana.</div>
+
+    <h2>4. position: absolute (relativo al padre con position)</h2>
+    <div class="padre-relativo">
+        Este div padre tiene position:relative.
+        <div class="hijo-absoluto">Este div hijo tiene position:absolute, se posiciona respecto al padre relativo (no respecto a toda la pagina).</div>
+    </div>
+    <p>Un elemento absolute se saca del flujo normal y puede superponerse con otros elementos.</p>
+
+    <h2>5. Texto posicionado sobre una imagen</h2>
+    <div class="contenedor-imagen">
+        <img src="https://www.w3schools.com/css/img_5terre.jpg" alt="Paisaje">
+        <div class="texto-imagen abajo-izq">Abajo Izquierda</div>
+        <div class="texto-imagen arriba-izq">Arriba Izquierda</div>
+        <div class="texto-imagen arriba-der">Arriba Derecha</div>
+        <div class="texto-imagen abajo-der">Abajo Derecha</div>
+        <div class="texto-imagen centrado-img">Centrado</div>
+    </div>
+    <p>El contenedor de la imagen tiene position:relative, y cada texto tiene position:absolute con su esquina correspondiente.</p>
+
+    <h2>6. position: sticky</h2>
+    <div class="contenedor-sticky">
+        <div class="sticky">Este encabezado se queda pegado arriba al hacer scroll DENTRO de este recuadro</div>
+        <p style="padding:10px;">Contenido 1 - haz scroll dentro de este recuadro para ver el efecto sticky.</p>
+        <p style="padding:10px;">Contenido 2</p>
+        <p style="padding:10px;">Contenido 3</p>
+        <p style="padding:10px;">Contenido 4</p>
+        <p style="padding:10px;">Contenido 5</p>
+        <p style="padding:10px;">Contenido 6</p>
+        <p style="padding:10px;">Contenido 7</p>
+        <p style="padding:10px;">Contenido 8</p>
+    </div>
+    <p>Usos comunes de sticky: encabezados de navegacion, barras laterales, encabezados de tablas largas.</p>
+
+    <h2>7. Sticky vs Fixed (comparacion)</h2>
+    <table class="comparacion">
+        <tr><th>Caracteristica</th><th>position: sticky</th><th>position: fixed</th></tr>
+        <tr><td>Comportamiento inicial</td><td>Actua como relative</td><td>Siempre fijo al viewport</td></tr>
+        <tr><td>Espacio en el documento</td><td>Ocupa espacio inicialmente</td><td>No ocupa espacio</td></tr>
+        <tr><td>Comportamiento al hacer scroll</td><td>Se pega despues de cierto punto</td><td>Siempre fijo</td></tr>
+        <tr><td>Limite del contenedor</td><td>Si, respeta los limites del padre</td><td>No, siempre relativo a la ventana</td></tr>
+    </table>
+
+</body>
+</html>
