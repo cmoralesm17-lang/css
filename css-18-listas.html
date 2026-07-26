@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 18 - Lists</title>
+    <style>
+        h2 { margin-top: 40px; }
+
+        ul.a {list-style-type: circle;}
+        ul.b {list-style-type: disc;}
+        ul.c {list-style-type: square;}
+
+        ol.d {list-style-type: upper-roman;}
+        ol.e {list-style-type: lower-roman;}
+        ol.f {list-style-type: lower-alpha;}
+        ol.g {list-style-type: decimal;}
+
+        ul.imagen {
+            list-style-image: url('https://www.w3schools.com/css/sqpurple.gif');
+            list-style-type: square;
+        }
+
+        ul.pos-outside { list-style-position: outside; }
+        ul.pos-inside { list-style-position: inside; }
+
+        ul.sinmarcador {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul.abreviado {
+            list-style: square inside url("https://www.w3schools.com/css/sqpurple.gif");
+        }
+
+        ol.colores {
+            background: salmon;
+            padding: 20px;
+        }
+        ol.colores li {
+            background: mistyrose;
+            color: darkred;
+            padding: 10px;
+            margin-left: 20px;
+        }
+
+        ul.colores {
+            background: powderblue;
+            padding: 20px;
+        }
+        ul.colores li {
+            background: mistyrose;
+            color: darkblue;
+            margin: 5px;
+        }
+
+        ul.borde-rojo {
+            list-style-type: none;
+            padding-left: 10px;
+        }
+        ul.borde-rojo li {
+            border-left: 5px solid red;
+            padding-left: 10px;
+            margin-bottom: 5px;
+        }
+
+        ul.borde-completo {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        ul.borde-completo li {
+            border: 1px solid gray;
+            border-bottom: none;
+            padding: 8px;
+        }
+        ul.borde-completo li:last-child {
+            border-bottom: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Leccion CSS 18 - Lists</h1>
+
+    <h2>1. list-style-type (varios marcadores)</h2>
+    <ul class="a"><li>Circle</li><li>Cafe</li></ul>
+    <ul class="b"><li>Disc</li><li>Te</li></ul>
+    <ul class="c"><li>Square</li><li>Coca-cola</li></ul>
+    <ol class="d"><li>Upper-roman</li><li>Segundo</li></ol>
+    <ol class="e"><li>Lower-roman</li><li>Segundo</li></ol>
+    <ol class="f"><li>Lower-alpha</li><li>Segundo</li></ol>
+    <ol class="g"><li>Decimal</li><li>Segundo</li></ol>
+
+    <h2>2. list-style-image (marcador con imagen)</h2>
+    <ul class="imagen">
+        <li>Cafe</li>
+        <li>Te</li>
+        <li>Coca-cola</li>
+    </ul>
+
+    <h2>3. list-style-position</h2>
+    <h3>outside (por defecto)</h3>
+    <ul class="pos-outside">
+        <li>Cafe</li>
+        <li>Te</li>
+    </ul>
+    <h3>inside</h3>
+    <ul class="pos-inside">
+        <li>Cafe</li>
+        <li>Te</li>
+    </ul>
+
+    <h2>4. Quitar los marcadores</h2>
+    <ul class="sinmarcador">
+        <li>Cafe sin viñeta</li>
+        <li>Te sin viñeta</li>
+    </ul>
+
+    <h2>5. Propiedad abreviada (list-style)</h2>
+    <ul class="abreviado">
+        <li>Cafe</li>
+        <li>Te</li>
+    </ul>
+    <p>list-style: square inside url(...); combina tipo, posicion e imagen en una linea.</p>
+
+    <h2>6. Listas con colores</h2>
+    <ol class="colores">
+        <li>Cafe</li>
+        <li>Te</li>
+        <li>Coca Cola</li>
+    </ol>
+    <ul class="colores">
+        <li>Cafe</li>
+        <li>Te</li>
+        <li>Coca Cola</li>
+    </ul>
+
+    <h2>7. Lista con borde rojo a la izquierda</h2>
+    <ul class="borde-rojo">
+        <li>Cafe</li>
+        <li>Te</li>
+        <li>Coca-cola</li>
+    </ul>
+
+    <h2>8. Lista con borde completo sin viñetas</h2>
+    <ul class="borde-completo">
+        <li>Cafe</li>
+        <li>Te</li>
+        <li>Coca-cola</li>
+    </ul>
+
+</body>
+</html>
