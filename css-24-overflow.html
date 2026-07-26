@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 24 - Overflow</title>
+    <style>
+        h2 { margin-top: 40px; }
+
+        .caja {
+            width: 200px;
+            height: 65px;
+            background-color: coral;
+            margin-bottom: 20px;
+            padding: 5px;
+        }
+
+        .visible { overflow: visible; }
+        .hidden { overflow: hidden; }
+        .scroll { overflow: scroll; }
+        .auto { overflow: auto; }
+
+        .caja-xy {
+            width: 200px;
+            height: 65px;
+            background-color: lightblue;
+            padding: 5px;
+        }
+        .solo-y {
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+        .solo-x {
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Leccion CSS 24 - Overflow</h1>
+
+    <h2>1. overflow: visible (por defecto)</h2>
+    <div class="caja visible">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
+    <p>El contenido se desborda fuera de la caja, sin recortarse (nota como el texto sale del recuadro coral).</p>
+
+    <h2>2. overflow: hidden</h2>
+    <div class="caja hidden">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
+    <p>El contenido que no cabe simplemente se oculta/recorta, sin scroll ni desborde visible.</p>
+
+    <h2>3. overflow: scroll</h2>
+    <div class="caja scroll">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
+    <p>Siempre aparecen barras de scroll (horizontal y vertical), incluso si no hacen falta.</p>
+
+    <h2>4. overflow: auto</h2>
+    <div class="caja auto">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
+    <p>Similar a scroll, pero solo muestra la barra si realmente hace falta (mas limpio visualmente).</p>
+
+    <h2>5. overflow-x y overflow-y por separado</h2>
+    <h3>Solo scroll vertical (overflow-x:hidden, overflow-y:scroll)</h3>
+    <div class="caja-xy solo-y">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
+
+    <h3>Solo scroll horizontal (overflow-x:scroll, overflow-y:hidden)</h3>
+    <div class="caja-xy solo-x">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
+
+    <h2>Casos de uso comunes</h2>
+    <ul>
+        <li><b>Tabla con scroll horizontal:</b> overflow-x:auto para tablas anchas (como vimos en la leccion de Tables)</li>
+        <li><b>Ventana de chat:</b> overflow-y:scroll para mensajes que se desplazan verticalmente</li>
+        <li><b>Bloques de codigo:</b> overflow-x:auto para lineas largas de codigo</li>
+    </ul>
+
+</body>
+</html>
