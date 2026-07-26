@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 29 - Pseudo-class</title>
+    <style>
+        h2 { margin-top: 45px; }
+
+        .grupo-links a:link { color: #FF0000; }
+        .grupo-links a:visited { color: #009900; }
+        .grupo-links a:hover { color: #FF00FF; }
+        .grupo-links a:active { color: #0000FF; }
+
+        .caja-hover {
+            width: 200px;
+            padding: 20px;
+            background-color: lightgray;
+            text-align: center;
+        }
+        .caja-hover:hover { background-color: dodgerblue; color: white; }
+
+        input:focus { background-color: yellow; }
+
+        a.highlight:link, a.highlight:visited { color: black; text-decoration: none; }
+        a.highlight:hover { color: #ff0000; }
+
+        .tooltip-contenedor p {
+            display: none;
+            background-color: yellow;
+            padding: 20px;
+            position: absolute;
+        }
+        .tooltip-contenedor:hover p { display: block; }
+        .tooltip-contenedor { position: relative; display: inline-block; background: lightblue; padding: 10px; }
+
+        .primer-hijo p:first-child { color: blue; font-weight: bold; }
+
+        .primer-em p em:first-child { color: green; }
+
+        .primer-p-em p:first-child em { color: purple; }
+
+        q:lang(es) { quotes: "«" "»"; }
+
+        .estructural li:first-child { background-color: lightyellow; }
+        .estructural li:last-child { background-color: lightgreen; }
+        .estructural li:nth-child(2) { background-color: lightpink; }
+        .estructural li:only-child { border: 2px solid red; }
+    </style>
+</head>
+<body>
+
+    <h1>Leccion CSS 29 - Pseudo-class</h1>
+
+    <h2>1. Pseudo-clases en enlaces (los 4 estados)</h2>
+    <p class="grupo-links"><a href="css-01-introduccion.html">Enlace de ejemplo (link, visited, hover, active)</a></p>
+    <p>Recuerda el orden obligatorio: link, visited, hover, active (LVHA) - si no, algunos estilos no funcionan.</p>
+
+    <h2>2. :hover en un div</h2>
+    <div class="caja-hover">Pasa el mouse encima de mi</div>
+
+    <h2>3. :focus en un input</h2>
+    <p>Haz clic dentro del campo:</p>
+    <input type="text" placeholder="Haz clic aqui">
+
+    <h2>4. Pseudo-clase combinada con una clase HTML</h2>
+    <p><a class="highlight" href="css-01-introduccion.html">Este enlace cambia a rojo solo en hover (clase .highlight)</a></p>
+
+    <h2>5. Tooltip simple con :hover</h2>
+    <div class="tooltip-contenedor">
+        Pasa el mouse encima para ver el tooltip
+        <p>Soy el texto oculto que aparece con hover!</p>
+    </div>
+
+    <h2>6. :first-child (estructural)</h2>
+    <h3>Todos los p que son primer hijo de su padre</h3>
+    <div class="primer-hijo">
+        <p>Este es el primer hijo del div - SI se pinta azul.</p>
+        <p>Este es el segundo hijo - NO se pinta.</p>
+    </div>
+
+    <h3>Primer em dentro de cada p</h3>
+    <div class="primer-em">
+        <p><em>Primer em</em> texto normal <em>segundo em (no se pinta)</em></p>
+    </div>
+
+    <h3>Todos los em dentro del primer p hijo</h3>
+    <div class="primer-p-em">
+        <p><em>Este em SI se pinta morado</em>, porque este p es el primer hijo</p>
+        <p><em>Este em NO se pinta</em>, porque este p no es el primer hijo</p>
+    </div>
+
+    <h2>7. :lang() - segun el idioma del elemento</h2>
+    <p>Texto normal <q lang="es">una cita en español con comillas especiales</q> texto normal.</p>
+
+    <h2>8. Otras pseudo-clases estructurales</h2>
+    <ul class="estructural">
+        <li>Elemento 1 (first-child, amarillo)</li>
+        <li>Elemento 2 (nth-child(2), rosado)</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4 (last-child, verde)</li>
+    </ul>
+    <p>first-child = amarillo | nth-child(2) = rosado | last-child = verde</p>
+
+</body>
+</html>
