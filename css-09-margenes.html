@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 09 - Margins</title>
+    <style>
+        h2 { margin-top: 40px; }
+        .caja { border: 1px solid black; background-color: #eee; }
+
+        .margen70 { margin: 70px; }
+
+        .margenlados {
+            margin-top: 40px;
+            margin-bottom: 40px;
+            margin-right: 60px;
+            margin-left: 30px;
+        }
+
+        .abreviado4 { margin: 25px 50px 25px 40px; }
+        .abreviado3 { margin: 25px 50px 15px; }
+        .abreviado2 { margin: 25px 50px; }
+        .abreviado1 { margin: 25px; }
+
+        .centrado {
+            width: 300px;
+            margin: auto;
+            border: 1px solid red;
+        }
+
+        .padre-inherit {
+            border: 1px solid red;
+            margin-left: 100px;
+        }
+        .hijo-inherit {
+            margin-left: inherit;
+            border: 1px solid blue;
+        }
+
+        .colapso-h1 { margin-bottom: 50px; background-color: lightyellow; }
+        .colapso-h2 { margin-top: 20px; background-color: lightyellow; }
+
+        .colapso-p { margin-top: 30px; margin-bottom: 30px; background-color: lightgreen; }
+    </style>
+</head>
+<body>
+
+    <h1>Leccion CSS 09 - Margins</h1>
+
+    <h2>1. Margin en las 4 direcciones (mismo valor)</h2>
+    <div class="caja margen70">Este elemento tiene margin: 70px alrededor.</div>
+
+    <h2>2. Margin individual por lado</h2>
+    <p class="caja margenlados">margin-top: 40px, margin-bottom: 40px, margin-right: 60px, margin-left: 30px</p>
+
+    <h2>3. Forma abreviada con 4 valores (arriba, derecha, abajo, izquierda)</h2>
+    <p class="caja abreviado4">margin: 25px 50px 25px 40px;</p>
+
+    <h2>4. Forma abreviada con 3 valores (arriba, lados, abajo)</h2>
+    <p class="caja abreviado3">margin: 25px 50px 15px;</p>
+
+    <h2>5. Forma abreviada con 2 valores (arriba/abajo, lados)</h2>
+    <p class="caja abreviado2">margin: 25px 50px;</p>
+
+    <h2>6. Forma abreviada con 1 valor (los 4 lados iguales)</h2>
+    <p class="caja abreviado1">margin: 25px;</p>
+
+    <h2>7. margin: auto (centra horizontalmente)</h2>
+    <div class="centrado">Este div tiene width:300px y margin:auto, por eso queda centrado en la pagina.</div>
+
+    <h2>8. margin: inherit</h2>
+    <div class="padre-inherit">
+        Este div padre tiene margin-left: 100px.
+        <p class="hijo-inherit">Este parrafo tiene margin-left: inherit, asi que hereda el mismo margen izquierdo de su padre (100px), en vez de tener uno propio.</p>
+    </div>
+
+    <h2>9. Colapso de margenes (h1 con bottom, h2 con top)</h2>
+    <h3 class="colapso-h1">Titulo con margin-bottom: 50px</h3>
+    <h3 class="colapso-h2">Titulo con margin-top: 20px</h3>
+    <p>Aunque 50px + 20px deberian sumar 70px de espacio entre ambos, el resultado real es solo 50px (el mayor de los dos), por el colapso de margenes.</p>
+
+    <h2>10. Colapso de margenes entre parrafos iguales</h2>
+    <p class="caja colapso-p">Parrafo 1 con margin-top: 30px y margin-bottom: 30px</p>
+    <p class="caja colapso-p">Parrafo 2 con margin-top: 30px y margin-bottom: 30px</p>
+    <p>Entre estos dos parrafos, en vez de 60px (30+30), el espacio real es de solo 30px por el colapso. Nota: el colapso SOLO ocurre entre margenes verticales (top/bottom), nunca en los laterales (left/right).</p>
+
+</body>
+</html>
