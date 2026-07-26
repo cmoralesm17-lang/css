@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 19 - Tables</title>
+    <style>
+        h2 { margin-top: 45px; }
+        h3 { margin-top: 15px; }
+
+        .t-doble, .t-doble th, .t-doble td { border: 1px solid; }
+        .t-color, .t-color th, .t-color td { border: 1px solid green; }
+        .t-collapse { border-collapse: collapse; }
+        .t-collapse th, .t-collapse td { border: 1px solid; }
+
+        .t-padding th, .t-padding td { padding: 10px; border: 1px solid; }
+
+        .t-spacing { border-collapse: separate; border-spacing: 15px; }
+        .t-spacing th, .t-spacing td { border: 1px solid; }
+
+        .t-borde-fuera { border: 1px solid; border-collapse: collapse; }
+        .t-borde-fuera td, .t-borde-fuera th { border: none; }
+
+        .t-100 { width: 100%; border-collapse: collapse; }
+        .t-100 th, .t-100 td { border: 1px solid; }
+        .t-50 { width: 50%; border-collapse: collapse; }
+        .t-50 th, .t-50 td { border: 1px solid; }
+        .t-fija { width: 500px; border-collapse: collapse; }
+        .t-fija th, .t-fija td { border: 1px solid; }
+        .t-auto { width: auto; border-collapse: collapse; }
+        .t-auto th, .t-auto td { border: 1px solid; }
+
+        .t-altura th { height: 70px; border: 1px solid; }
+        .t-altura td { border: 1px solid; }
+
+        .t-align-center { border-collapse: collapse; width: 100%; }
+        .t-align-center th, .t-align-center td { border: 1px solid; }
+        .t-align-center td { text-align: center; }
+
+        .t-align-left { border-collapse: collapse; width: 100%; }
+        .t-align-left th, .t-align-left td { border: 1px solid; }
+        .t-align-left th { text-align: left; }
+
+        .t-vertical { border-collapse: collapse; width: 100%; }
+        .t-vertical th, .t-vertical td { border: 1px solid; }
+        .t-vertical td { height: 50px; vertical-align: bottom; }
+
+        .t-estilo { border-collapse: collapse; width: 100%; }
+        .t-estilo th, .t-estilo td { padding: 10px; text-align: left; border-bottom: 1px solid #ddd; }
+
+        .t-hover { border-collapse: collapse; width: 100%; }
+        .t-hover th, .t-hover td { padding: 10px; text-align: left; border-bottom: 1px solid #ddd; }
+        .t-hover tr:hover { background-color: coral; }
+
+        .t-zebra { border-collapse: collapse; width: 100%; }
+        .t-zebra th, .t-zebra td { padding: 10px; text-align: left; border-bottom: 1px solid #ddd; }
+        .t-zebra tr:nth-child(even) { background-color: #f2f2f2; }
+
+        .t-final { border-collapse: collapse; width: 100%; }
+        .t-final th, .t-final td { padding: 10px; text-align: left; border-bottom: 1px solid #ddd; }
+        .t-final th { background-color: #04AA6D; color: white; }
+        .t-final tr:nth-child(even) { background-color: #f2f2f2; }
+        .t-final tr:hover { background-color: coral; }
+
+        .tablecontainer {
+            overflow-x: auto;
+            border: 1px solid #ccc;
+        }
+        .t-responsive { border-collapse: collapse; width: 100%; min-width: 900px; }
+        .t-responsive th, .t-responsive td { padding: 8px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+
+    <h1>Leccion CSS 19 - Tables</h1>
+
+    <h2>1. Bordes de tabla (dobles por defecto)</h2>
+    <table class="t-doble">
+        <tr><th>Nombre</th><th>Apellido</th></tr>
+        <tr><td>Peter</td><td>Griffin</td></tr>
+        <tr><td>Lois</td><td>Griffin</td></tr>
+    </table>
+    <p>Se ven bordes "dobles" porque table, th y td tienen cada uno su propio borde.</p>
+
+    <h2>2. Color de borde</h2>
+    <table class="t-color">
+        <tr><th>Nombre</th><th>Apellido</th></tr>
+        <tr><td>Peter</td><td>Griffin</td></tr>
+    </table>
+
+    <h2>3. border-collapse (une los bordes dobles)</h2>
+    <table class="t-collapse">
+        <tr><th>Nombre</th><th>Apellido</th></tr>
+        <tr><td>Peter</td><td>Griffin</td></tr>
+    </table>
+
+    <h2>4. Padding en las celdas</h2>
+    <table class="t-padding">
+        <tr><th>Nombre</th><th>Apellido</th><th>Ahorro</th></tr>
+        <tr><td>Peter</td><td>Griffin</td><td>$100</td></tr>
+        <tr><td>Lois</td><td>Griffin</td><td>$150</td></tr>
+    </table>
+
+    <h2>5. border-spacing (espacio entre celdas, requiere separate)</h2>
+    <table class="t-spacing">
+        <tr><th>Nombre</th><th>Apellido</th></tr>
+        <tr><td>Peter</td><td>Griffin</td></tr>
+    </table>
+
+    <h2>6. Solo borde exterior de la tabla</h2>
+    <table class="t-borde-fuera">
+        <tr><th>Nombre</th><th>Apellido</th></tr>
+        <tr><td>Peter</td><td>Griffin</td></tr>
+    </table>
+
+    <h2>7. Ancho de tabla (width)</h2>
+    <h3>100%</h3>
+    <table class="t-100"><tr><th>Nombre</th><th>Apellido</th><th>Ahorro</th></tr><tr><td>Peter</td><td>Griffin</td><td>$100</td></tr></table>
+    <h3>50%</h3>
+    <table class="t-50"><tr><th>Nombre</th><th>Apellido</th><th>Ahorro</th></tr><tr><td>Peter</td><td>Griffin</td><td>$100</td></tr></table>
+    <h3>Ancho fijo (500px)</h3>
+    <table class="t-fija"><tr><th>Nombre</th><th>Apellido</th><th>Ahorro</th></tr><tr><td>Peter</td><td>Griffin</td><td>$100</td></tr></table>
+    <h3>auto</h3>
+    <table class="t-auto"><tr><th>Nombre</th><th>Apellido</th><th>Ahorro</th></tr><tr><td>Peter</td><td>Griffin</td><td>$100</td></tr></table>
+
+    <h2>8. Alto de tabla (height en th)</h2>
+    <table class="t-altura">
+        <tr><th>Nombre</th><th>Apellido</th></tr>
+        <tr><td>Peter</td><td>Griffin</td></tr>
+    </table>
+
+    <h2>9. Alineacion horizontal (text-align)</h2>
+    <h3>Centrar td (por defecto th ya viene centrado)</h3>
+    <table class="t-align-center"><tr><th>Nombre</th><th>Apellido</th></tr><tr><td>Peter</td><td>Griffin</td></tr></table>
+    <h3>Alinear th a la izquierda (por defecto viene centrado)</h3>
+    <table class="t-align-left"><tr><th>Nombre</th><th>Apellido</th></tr><tr><td>Peter</td><td>Griffin</td></tr></table>
+
+    <h2>10. Alineacion vertical (vertical-align)</h2>
+    <table class="t-vertical">
+        <tr><th>Nombre</th><th>Apellido</th></tr>
+        <tr><td>Peter</td><td>Griffin</td></tr>
+    </table>
+    <p>Las celdas td tienen height:50px y vertical-align:bottom, el texto se pega hacia abajo del espacio disponible.</p>
+
+    <h2>11. Divisores horizontales (border-bottom)</h2>
+    <table class="t-estilo">
+        <tr><th>Nombre</th><th>Apellido</th><th>Ahorro</th></tr>
+        <tr><td>Peter</td><td>Griffin</td><td>$100</td></tr>
+        <tr><td>Lois</td><td>Griffin</td><td>$150</td></tr>
+    </table>
+
+    <h2>12. Tabla con efecto hover</h2>
+    <table class="t-hover">
+        <tr><th>Nombre</th><th>Apellido</th><th>Ahorro</th></tr>
+        <tr><td>Peter</td><td>Griffin</td><td>$100</td></tr>
+        <tr><td>Lois</td><td>Griffin</td><td>$150</td></tr>
+        <tr><td>Joe</td><td>Swanson</td><td>$300</td></tr>
+    </table>
+
+    <h2>13. Rayas de cebra (zebra-striped)</h2>
+    <table class="t-zebra">
+        <tr><th>Nombre</th><th>Apellido</th><th>Ahorro</th></tr>
+        <tr><td>Peter</td><td>Griffin</td><td>$100</td></tr>
+        <tr><td>Lois</td><td>Griffin</td><td>$150</td></tr>
+        <tr><td>Joe</td><td>Swanson</td><td>$300</td></tr>
+    </table>
+
+    <h2>14. Tabla completa combinando todo (color + zebra + hover)</h2>
+    <table class="t-final">
+        <tr><th>Nombre</th><th>Apellido</th><th>Ahorro</th></tr>
+        <tr><td>Peter</td><td>Griffin</td><td>$100</td></tr>
+        <tr><td>Lois</td><td>Griffin</td><td>$150</td></tr>
+        <tr><td>Joe</td><td>Swanson</td><td>$300</td></tr>
+    </table>
+
+    <h2>15. Tabla responsive (scroll horizontal en pantallas pequeñas)</h2>
+    <div class="tablecontainer">
+        <table class="t-responsive">
+            <tr><th>Nombre</th><th>Apellido</th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th><th>P7</th></tr>
+            <tr><td>Jill</td><td>Smith</td><td>50</td><td>50</td><td>50</td><td>50</td><td>50</td><td>50</td><td>50</td></tr>
+            <tr><td>Eve</td><td>Jackson</td><td>94</td><td>94</td><td>94</td><td>94</td><td>94</td><td>94</td><td>94</td></tr>
+        </table>
+    </div>
+    <p>La tabla esta envuelta en un div con overflow-x:auto y la tabla tiene min-width mayor a lo que cabe en pantalla, por eso aparece scroll horizontal en vez de romper el diseño.</p>
+
+</body>
+</html>
