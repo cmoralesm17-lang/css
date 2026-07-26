@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 05 - Comments</title>
+    <style>
+        /* Este es un comentario de una sola linea */
+        p {
+            color: red;
+        }
+
+        h2 {
+            color: blue;  /* Comentario al final de la linea, explicando la propiedad */
+        }
+
+        h3 {
+            color: /*green*/purple;  /* El comentario en medio de la linea es ignorado, gana purple */
+        }
+
+        /* Este es
+        un comentario
+        de varias lineas */
+        h4 {
+            color: darkorange;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Comentarios en CSS</h1>
+
+    <h2>Comentario simple explicando una propiedad</h2>
+    <p>Este parrafo es rojo, con un comentario de una linea arriba del selector p en el CSS.</p>
+
+    <h3>Comentario al final de la linea de codigo</h3>
+    <p>El h2 de arriba es azul, con el comentario puesto justo despues de la propiedad color.</p>
+
+    <h3>Comentario en medio de una linea (dentro del valor)</h3>
+    <p>Este h3 (arriba) se ve morado, no verde, porque el navegador ignora todo lo que esta entre /* */ y solo aplica "purple".</p>
+
+    <h3>Comentario de varias lineas</h3>
+    <p>El h4 de abajo tiene un comentario que ocupa 3 lineas antes de su regla:</p>
+    <h4>Este es un h4 en naranja oscuro</h4>
+
+    <hr>
+
+    <h2>Combinando comentarios de HTML y de CSS</h2>
+
+    <!-- Estos parrafos se veran rojos -->
+    <p>Hola Mundo!</p>
+    <p>Este parrafo tiene estilo aplicado con CSS.</p>
+    <p>Los comentarios de HTML y CSS no se muestran en el resultado final, solo en el codigo fuente.</p>
+
+</body>
+</html>
