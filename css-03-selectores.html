@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 03 - Selectors</title>
+    <style>
+        p {
+            text-align: left;
+        }
+
+        #para1 {
+            text-align: center;
+            color: red;
+        }
+
+        .center {
+            text-align: center;
+            color: blue;
+        }
+
+        p.center {
+            text-align: center;
+            color: green;
+            font-weight: bold;
+        }
+
+        .large {
+            font-size: 150%;
+        }
+
+        .universal * {
+            color: purple;
+        }
+
+        h4, h5, .agrupado {
+            text-align: center;
+            color: darkorange;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Selectores de CSS</h1>
+
+    <h2>1. Selector de elemento</h2>
+    <p>Este selector afecta a TODOS los elementos p de la pagina (aqui alineados a la izquierda).</p>
+
+    <h2>2. Selector de id (unico)</h2>
+    <p id="para1">Este parrafo tiene id="para1", por eso esta centrado y en rojo. Solo puede haber UN elemento con este id en toda la pagina.</p>
+
+    <h2>3. Selector de clase (general)</h2>
+    <p class="center">Este parrafo tiene class="center", por eso esta centrado y en azul.</p>
+    <h3 class="center">Este h3 tambien tiene class="center", y recibe el mismo estilo aunque sea otro tipo de elemento.</h3>
+
+    <h2>4. Selector de clase combinado con elemento (p.center)</h2>
+    <p class="center">Este parrafo con class="center" ahora se ve verde y en negrita, porque coincide con la regla mas especifica "p.center" (que sobreescribe a la regla ".center" generica).</p>
+
+    <h2>5. Elemento con multiples clases</h2>
+    <p class="center large">Este parrafo tiene DOS clases al mismo tiempo: "center" y "large". Recibe los estilos de ambas: texto centrado, verde, negrita (de p.center) y tamaño grande (de .large).</p>
+
+    <h2>6. Selector universal (*)</h2>
+    <div class="universal">
+        <p>Todo el texto dentro de este div es morado, sin importar la etiqueta (p, b, span), porque el selector universal * afecta a todo.</p>
+        <p>Este parrafo tambien es morado.</p>
+    </div>
+
+    <h2>7. Selector de agrupacion (coma)</h2>
+    <h4>Este h4 esta centrado y naranja</h4>
+    <h5>Este h5 tambien esta centrado y naranja</h5>
+    <p class="agrupado">Este parrafo con class="agrupado" tambien recibe el mismo estilo, porque agrupe "h4, h5, .agrupado" en una sola regla con comas, en vez de escribir 3 reglas separadas.</p>
+
+    <h2>8. Tabla resumen de selectores simples</h2>
+    <table border="1" style="text-align:left; border-collapse:collapse;">
+        <tr>
+            <th style="padding:8px;">Selector</th>
+            <th style="padding:8px;">Ejemplo</th>
+            <th style="padding:8px;">Descripcion</th>
+        </tr>
+        <tr>
+            <td style="padding:8px;">#id</td>
+            <td style="padding:8px;">#para1</td>
+            <td style="padding:8px;">Selecciona el elemento con id="para1"</td>
+        </tr>
+        <tr>
+            <td style="padding:8px;">.class</td>
+            <td style="padding:8px;">.center</td>
+            <td style="padding:8px;">Selecciona todos los elementos con class="center"</td>
+        </tr>
+        <tr>
+            <td style="padding:8px;">*</td>
+            <td style="padding:8px;">*</td>
+            <td style="padding:8px;">Selecciona todos los elementos</td>
+        </tr>
+        <tr>
+            <td style="padding:8px;">elemento</td>
+            <td style="padding:8px;">p</td>
+            <td style="padding:8px;">Selecciona todos los elementos p</td>
+        </tr>
+        <tr>
+            <td style="padding:8px;">elemento,elemento</td>
+            <td style="padding:8px;">h4, h5</td>
+            <td style="padding:8px;">Selecciona todos los h4 y todos los h5</td>
+        </tr>
+    </table>
+
+</body>
+</html>
