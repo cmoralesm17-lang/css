@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 10 - Padding</title>
+    <style>
+        h2 { margin-top: 40px; }
+        .caja { border: 1px solid black; background-color: lightblue; }
+
+        .padding70 { padding: 70px; }
+
+        .paddinglados {
+            padding-top: 50px;
+            padding-right: 30px;
+            padding-bottom: 50px;
+            padding-left: 80px;
+        }
+
+        .abreviado4 { padding: 25px 50px 25px 40px; }
+        .abreviado3 { padding: 25px 50px 15px; }
+        .abreviado2 { padding: 25px 50px; }
+        .abreviado1 { padding: 25px; }
+
+        .padding-left-solo { padding-left: 100px; }
+        .padding-right-solo { padding-right: 100px; }
+        .padding-top-solo { padding-top: 50px; }
+        .padding-bottom-solo { padding-bottom: 50px; }
+
+        .sin-boxsizing {
+            width: 300px;
+            padding: 25px;
+            background-color: lightyellow;
+            border: 1px solid black;
+        }
+
+        .con-boxsizing {
+            width: 300px;
+            padding: 25px;
+            box-sizing: border-box;
+            background-color: lightgreen;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Leccion CSS 10 - Padding</h1>
+
+    <h2>1. Padding en las 4 direcciones (mismo valor)</h2>
+    <div class="caja padding70">Este elemento tiene padding: 70px alrededor de su contenido.</div>
+
+    <h2>2. Padding individual por lado</h2>
+    <div class="caja paddinglados">padding-top: 50px, padding-right: 30px, padding-bottom: 50px, padding-left: 80px</div>
+
+    <h2>3. Forma abreviada con 4 valores (arriba, derecha, abajo, izquierda)</h2>
+    <div class="caja abreviado4">padding: 25px 50px 25px 40px;</div>
+
+    <h2>4. Forma abreviada con 3 valores (arriba, lados, abajo)</h2>
+    <div class="caja abreviado3">padding: 25px 50px 15px;</div>
+
+    <h2>5. Forma abreviada con 2 valores (arriba/abajo, lados)</h2>
+    <div class="caja abreviado2">padding: 25px 50px;</div>
+
+    <h2>6. Forma abreviada con 1 valor (los 4 lados iguales)</h2>
+    <div class="caja abreviado1">padding: 25px;</div>
+
+    <h2>7. Padding por un solo lado (ejemplos individuales)</h2>
+    <p class="caja padding-left-solo">Solo padding-left: 100px</p>
+    <p class="caja padding-right-solo">Solo padding-right: 100px</p>
+    <p class="caja padding-top-solo">Solo padding-top: 50px</p>
+    <p class="caja padding-bottom-solo">Solo padding-bottom: 50px</p>
+
+    <h2>8. Diferencia clave con margin</h2>
+    <p>El padding es el espacio DENTRO del borde (entre el borde y el contenido). El margin es el espacio FUERA del borde. A diferencia de margin, el padding NO acepta valores negativos.</p>
+
+    <h2>9. Padding y el ancho del elemento (problema)</h2>
+    <div class="sin-boxsizing">Este div tiene width:300px y padding:25px, pero su ancho REAL termina siendo 350px (300 + 25 izquierda + 25 derecha), porque por defecto el padding se SUMA al ancho definido.</div>
+
+    <h2>10. Solucion con box-sizing: border-box</h2>
+    <div class="con-boxsizing">Este div tambien tiene width:300px y padding:25px, pero ademas tiene box-sizing:border-box, asi que su ancho total se mantiene en 300px real (el padding se resta del espacio de contenido, en vez de sumarse al total).</div>
+
+</body>
+</html>
