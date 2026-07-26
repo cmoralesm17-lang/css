@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 25 - Float</title>
+    <style>
+        h2 { margin-top: 45px; }
+
+        .img-right { float: right; margin-left: 15px; width: 150px; }
+        .img-left { float: left; margin-right: 15px; width: 150px; }
+        .img-none { float: none; width: 150px; }
+
+        .divs-flotantes { overflow: auto; margin-bottom: 10px; }
+        .divs-flotantes div { float: left; padding: 15px; color: white; }
+        .div1 { background: red; }
+        .div2 { background: yellow; color: black; }
+        .div3 { background: green; }
+
+        .clear-ejemplo1 { float: left; background: lightblue; padding: 10px; }
+        .clear-ejemplo2 { clear: left; background: lightyellow; padding: 10px; }
+
+        .sin-clearfix { border: 3px solid #73AD21; }
+        .sin-clearfix div { float: left; padding: 10px; border: 1px solid red; width: 100px; }
+
+        .clearfix { border: 3px solid #73AD21; }
+        .clearfix div { float: left; padding: 10px; border: 1px solid red; width: 100px; }
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .caja-igual { box-sizing: border-box; }
+        .box { float: left; width: 33.33%; padding: 20px; box-sizing: border-box; }
+        .box1 { background: #bbb; }
+        .box2 { background: #ccc; }
+        .box3 { background: #ddd; }
+        .contenedor-cajas::after { content: ""; clear: both; display: table; }
+
+        .img-container { float: left; width: 33.33%; padding: 5px; box-sizing: border-box; }
+        .img-container img { width: 100%; }
+
+        .altura-fija .caja-altura { height: 150px; float: left; width: 48%; margin: 1%; box-sizing: border-box; background: #eee; padding: 10px; }
+        .altura-fija::after { content: ""; clear: both; display: table; }
+
+        .flex-cajas { display: flex; }
+        .flex-cajas div { padding: 10px; box-sizing: border-box; background: #eee; margin: 1%; }
+
+        .menu-float {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+        .menu-float li { float: left; }
+        .menu-float li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .menu-float li a:hover { background-color: #111; }
+    </style>
+</head>
+<body>
+
+    <h1>Leccion CSS 25 - Float</h1>
+
+    <h2>1. float: right</h2>
+    <p>
+        <img class="img-right" src="https://www.w3schools.com/css/img_5terre.jpg" alt="Paisaje">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.
+    </p>
+
+    <h2>2. float: left</h2>
+    <p>
+        <img class="img-left" src="https://www.w3schools.com/css/img_5terre.jpg" alt="Paisaje">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa.
+    </p>
+
+    <h2>3. float: none (por defecto)</h2>
+    <p>
+        <img class="img-none" src="https://www.w3schools.com/css/img_5terre.jpg" alt="Paisaje"><br>
+        La imagen aparece justo donde esta en el codigo, el texto no la rodea.
+    </p>
+
+    <h2>4. Divs flotando uno junto al otro</h2>
+    <div class="divs-flotantes">
+        <div class="div1">Div 1</div>
+        <div class="div2">Div 2</div>
+        <div class="div3">Div 3</div>
+    </div>
+
+    <h2>5. La propiedad clear</h2>
+    <div class="clear-ejemplo1">Este div flota a la izquierda</div>
+    <div class="clear-ejemplo2">Este div tiene clear:left, asi que se empuja hacia abajo del flotante en vez de acomodarse a su lado.</div>
+
+    <h2>6. Problema sin clearfix (el contenedor se colapsa)</h2>
+    <div class="sin-clearfix">
+        <div>Caja A</div>
+        <div>Caja B</div>
+    </div>
+    <p>Nota que el borde verde de arriba no encierra bien las cajas, porque los divs flotantes "se salen" del flujo normal.</p>
+
+    <h2>7. Solucion con clearfix (::after)</h2>
+    <div class="clearfix">
+        <div>Caja A</div>
+        <div>Caja B</div>
+    </div>
+    <p>Con el truco clearfix (::after con clear:both), el contenedor verde ahora SI encierra correctamente las cajas flotantes.</p>
+
+    <h2>8. Cajas de ancho igual (3 columnas)</h2>
+    <div class="contenedor-cajas">
+        <div class="box box1">Box 1</div>
+        <div class="box box2">Box 2</div>
+        <div class="box box3">Box 3</div>
+    </div>
+    <p>Cada caja tiene width:33.33% y box-sizing:border-box (para que el padding no rompa el ancho total).</p>
+
+    <h2>9. Imagenes lado a lado</h2>
+    <div class="contenedor-cajas">
+        <div class="img-container"><img src="https://www.w3schools.com/css/img_5terre.jpg" alt="Italia"></div>
+        <div class="img-container"><img src="https://www.w3schools.com/css/img_forest.jpg" alt="Bosque"></div>
+        <div class="img-container"><img src="https://www.w3schools.com/css/img_mountains.jpg" alt="Montañas"></div>
+    </div>
+
+    <h2>10. Cajas con altura igual (fija, no flexible)</h2>
+    <div class="altura-fija">
+        <div class="caja-altura">Box 1: Contenido corto.</div>
+        <div class="caja-altura">Box 2: Contenido un poco mas largo, para notar que ambas cajas mantienen la misma altura de 150px sin importar cuanto texto tengan.</div>
+    </div>
+    <p>Problema: si el contenido es mas largo que la altura fija, se desborda. Por eso en proyectos reales se prefiere Flexbox.</p>
+
+    <h2>11. Cajas con altura igual usando Flexbox (mejor solucion)</h2>
+    <div class="flex-cajas">
+        <div style="width:50%;">Box 1 - Este texto es mas largo para que la caja crezca en altura de forma natural.</div>
+        <div style="width:50%;">Box 2 - Mi altura sigue automaticamente a la de Box 1, sin necesidad de fijar un numero.</div>
+    </div>
+
+    <h2>12. Menu de navegacion horizontal con float</h2>
+    <ul class="menu-float">
+        <li><a href="css-01-introduccion.html">Inicio</a></li>
+        <li><a href="#noticias">Noticias</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#acerca">Acerca de</a></li>
+    </ul>
+
+</body>
+</html>
