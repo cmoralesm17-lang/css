@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 26 - Inline-block</title>
+    <style>
+        h2 { margin-top: 45px; }
+
+        span.a {
+            display: inline;
+            padding: 5px;
+            border: 2px solid red;
+        }
+
+        span.b {
+            display: inline-block;
+            width: 100px;
+            height: 35px;
+            padding: 5px;
+            border: 2px solid red;
+        }
+
+        span.c {
+            display: block;
+            width: 100px;
+            height: 35px;
+            padding: 5px;
+            border: 2px solid red;
+        }
+
+        .nav {
+            background-color: lightgray;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .nav li {
+            display: inline-block;
+            font-size: 18px;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Leccion CSS 26 - Inline-block</h1>
+
+    <h2>1. Comparacion: inline vs inline-block vs block</h2>
+
+    <h3>display: inline (el default de span)</h3>
+    <span class="a">1</span>
+    <span class="a">2</span>
+    <span class="a">3</span>
+    <p>Se quedan en la misma linea, PERO no aceptan width/height (el border/padding se ve, pero no puedes forzar un tamaño exacto).</p>
+
+    <h3>display: inline-block</h3>
+    <span class="b">1</span>
+    <span class="b">2</span>
+    <span class="b">3</span>
+    <p>Se quedan en la misma linea Y SI aceptan width/height/margin-top/margin-bottom, como si fueran block pero sin romper la linea.</p>
+
+    <h3>display: block</h3>
+    <span class="c">1</span>
+    <span class="c">2</span>
+    <span class="c">3</span>
+    <p>Cada uno rompe la linea y ocupa su propio espacio, uno debajo del otro.</p>
+
+    <h2>2. Menu de navegacion horizontal con inline-block</h2>
+    <ul class="nav">
+        <li>Inicio</li>
+        <li>Servicios</li>
+        <li>Productos</li>
+        <li>Contacto</li>
+    </ul>
+    <p>A diferencia del metodo con float que vimos en la leccion anterior, aqui no se necesita clearfix ni overflow:auto en el contenedor - inline-block es mas simple para este caso.</p>
+
+</body>
+</html>
