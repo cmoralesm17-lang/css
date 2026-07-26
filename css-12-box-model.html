@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 12 - Box Model</title>
+    <style>
+        h2 { margin-top: 40px; }
+
+        .caja-modelo {
+            width: 300px;
+            border: 15px solid green;
+            padding: 50px;
+            margin: 20px;
+            background-color: lightyellow;
+        }
+
+        .caja-calculo {
+            width: 320px;
+            height: 50px;
+            padding: 10px;
+            border: 5px solid gray;
+            margin: 0;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Leccion CSS 12 - Box Model</h1>
+
+    <h2>Las 4 partes del modelo de caja (de adentro hacia afuera)</h2>
+    <ul>
+        <li><b>Content</b> - el contenido en si (texto, imagenes)</li>
+        <li><b>Padding</b> - espacio alrededor del contenido, transparente</li>
+        <li><b>Border</b> - borde que rodea al padding y al contenido</li>
+        <li><b>Margin</b> - espacio fuera del borde, transparente</li>
+    </ul>
+
+    <h2>1. Demostracion visual del box model</h2>
+    <div class="caja-modelo">
+        Este div tiene width:300px, border:15px solid green, padding:50px, margin:20px. Puedes ver claramente las 4 capas: el fondo amarillo es el contenido+padding, el borde verde grueso es el border, y el espacio blanco alrededor es el margin.
+    </div>
+
+    <h2>2. Calculo del ancho y alto TOTAL de un elemento</h2>
+    <div class="caja-calculo">
+        width:320px, height:50px, padding:10px, border:5px solid gray, margin:0
+    </div>
+
+    <h3>Calculo del ancho total:</h3>
+    <pre>
+  320px (ancho del area de contenido)
++  20px (padding izquierdo 10px + padding derecho 10px)
++  10px (borde izquierdo 5px + borde derecho 5px)
+= 350px (ancho TOTAL)
+    </pre>
+
+    <h3>Calculo del alto total:</h3>
+    <pre>
+   50px (alto del area de contenido)
++  20px (padding arriba 10px + padding abajo 10px)
++  10px (borde arriba 5px + borde abajo 5px)
+=  80px (alto TOTAL)
+    </pre>
+
+    <h2>Formulas generales</h2>
+    <p><b>Ancho total</b> = width + padding izquierdo + padding derecho + borde izquierdo + borde derecho</p>
+    <p><b>Alto total</b> = height + padding arriba + padding abajo + borde arriba + borde abajo</p>
+
+    <h2>Nota importante sobre el margin</h2>
+    <p>El margin SI afecta el espacio total que ocupa la caja en la pagina (empuja a los demas elementos), pero NO se cuenta dentro del tamaño real de la caja. El tamaño de la caja (ancho/alto) termina justo en el borde, el margin es "espacio adicional" fuera de esa caja.</p>
+
+    <p>Esta leccion conecta directamente con box-sizing: border-box que vimos en Padding — esa propiedad justamente cambia esta formula, haciendo que width/height incluyan padding y borde automaticamente, en vez de tener que sumarlos aparte.</p>
+
+</body>
+</html>
