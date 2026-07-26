@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 21 - Max-width</title>
+    <style>
+        h2 { margin-top: 40px; }
+
+        div.ex1 {
+            width: 500px;
+            margin: auto;
+            border: 3px solid #73AD21;
+            padding: 10px;
+        }
+
+        div.ex2 {
+            max-width: 500px;
+            margin: auto;
+            border: 3px solid #73AD21;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Leccion CSS 21 - Max-width</h1>
+
+    <h2>El problema con width fijo</h2>
+    <div class="ex1">Este div tiene width:500px fijo, y margin:auto para centrarlo.</div>
+    <p>Si la ventana del navegador se hace mas angosta que 500px, este div NO se encoge: parte del contenido se corta o aparece una barra de scroll horizontal en toda la pagina.</p>
+
+    <h2>La solucion con max-width</h2>
+    <div class="ex2">Este div tiene max-width:500px en vez de width, y margin:auto para centrarlo.</div>
+    <p>Este div se sigue viendo igual mientras haya espacio suficiente, PERO si la ventana se hace mas angosta que 500px, el div se encoge junto con ella, sin cortar contenido ni generar scroll horizontal.</p>
+
+    <h2>Como probarlo</h2>
+    <p>Reduce el ancho de la ventana de tu navegador (o achica la ventana) a menos de 500px, y compara el comportamiento de ambos divs: el primero se queda rigido, el segundo se adapta.</p>
+
+    <h2>Por que es importante</h2>
+    <p>max-width es clave para el diseño responsive: permite que un elemento tenga un tamaño maximo "ideal" en pantallas grandes, pero se adapte automaticamente a pantallas pequeñas (celulares, tablets), sin necesidad de escribir media queries adicionales solo para este caso.</p>
+
+</body>
+</html>
