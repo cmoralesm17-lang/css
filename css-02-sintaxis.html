@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 02 - Sintaxis</title>
+    <style>
+        p {
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Sintaxis de CSS</h1>
+
+    <h2>Ejemplo de la leccion</h2>
+    <p>Este parrafo esta centrado y en color rojo, gracias a la regla CSS aplicada a todos los elementos p de esta pagina.</p>
+    <p>Este segundo parrafo tambien recibe el mismo estilo, porque el selector "p" afecta a TODOS los parrafos.</p>
+
+    <h2>Partes de una regla CSS (explicacion)</h2>
+    <p style="color:black; text-align:left;">
+        Una regla CSS tiene un <b>selector</b> y un <b>bloque de declaracion</b>:
+    </p>
+    <ul style="text-align:left;">
+        <li><b>Selector</b>: apunta al elemento HTML que se quiere estilizar (en el ejemplo de arriba, es "p").</li>
+        <li><b>Bloque de declaracion</b>: va entre llaves { }, y contiene una o mas declaraciones separadas por punto y coma.</li>
+        <li><b>Declaracion</b>: tiene una propiedad y un valor, separados por dos puntos (ej. color: red;).</li>
+    </ul>
+
+    <h2>Desglose del ejemplo</h2>
+    <p style="text-align:left;">
+        <code>p</code> es el selector (apunta al elemento &lt;p&gt;).<br>
+        <code>color</code> es una propiedad, y <code>red</code> es su valor.<br>
+        <code>text-align</code> es una propiedad, y <code>center</code> es su valor.
+    </p>
+
+</body>
+</html>
