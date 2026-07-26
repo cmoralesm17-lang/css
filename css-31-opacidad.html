@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 31 - Opacity</title>
+    <style>
+        h2 { margin-top: 45px; }
+
+        .img-op02 { opacity: 0.2; width: 120px; }
+        .img-op05 { opacity: 0.5; width: 120px; }
+        .img-op10 { opacity: 1.0; width: 120px; }
+
+        .img-hover { opacity: 0.5; width: 150px; transition: opacity 0.3s; }
+        .img-hover:hover { opacity: 1.0; }
+
+        .img-hover-inverso { opacity: 1.0; width: 150px; transition: opacity 0.3s; }
+        .img-hover-inverso:hover { opacity: 0.5; }
+
+        .caja-opacidad {
+            background-color: green;
+            width: 200px;
+            color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .op1 { opacity: 1; }
+        .op06 { opacity: 0.6; }
+        .op03 { opacity: 0.3; }
+        .op01 { opacity: 0.1; }
+
+        .caja-rgba {
+            background-color: rgba(4, 170, 109, 1);
+            width: 200px;
+            color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .rgba06 { background-color: rgba(4, 170, 109, 0.6); }
+        .rgba03 { background-color: rgba(4, 170, 109, 0.3); }
+        .rgba01 { background-color: rgba(4, 170, 109, 0.1); }
+
+        div.background {
+            background: url("https://www.w3schools.com/css/klematis.jpg") repeat;
+            border: 2px solid black;
+            padding: 20px;
+        }
+        div.transbox {
+            margin: 30px;
+            background-color: rgba(255, 255, 255, 0.6);
+            border: 1px solid black;
+        }
+        div.transbox p {
+            margin: 5%;
+            font-weight: bold;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Leccion CSS 31 - Opacity</h1>
+
+    <h2>1. Opacidad basica en imagenes</h2>
+    <img class="img-op02" src="https://www.w3schools.com/css/img_forest.jpg" alt="opacity 0.2">
+    <img class="img-op05" src="https://www.w3schools.com/css/img_forest.jpg" alt="opacity 0.5">
+    <img class="img-op10" src="https://www.w3schools.com/css/img_forest.jpg" alt="opacity 1.0">
+    <p>0.2 (casi invisible), 0.5 (semi-transparente), 1.0 (totalmente opaca, por defecto).</p>
+
+    <h2>2. Opacity con :hover (aparece al pasar el mouse)</h2>
+    <img class="img-hover" src="https://www.w3schools.com/css/img_forest.jpg" alt="hover normal">
+    <p>Empieza en opacity:0.5, y al pasar el mouse sube a opacity:1.0 (totalmente visible).</p>
+
+    <h2>3. Efecto hover invertido (se desvanece al pasar el mouse)</h2>
+    <img class="img-hover-inverso" src="https://www.w3schools.com/css/img_forest.jpg" alt="hover invertido">
+    <p>Al reves del anterior: empieza opaca, y se desvanece al pasar el mouse encima.</p>
+
+    <h2>4. Cajas transparentes (opacity afecta al contenido tambien)</h2>
+    <div class="caja-opacidad op1">opacity: 1 (texto totalmente legible)</div>
+    <div class="caja-opacidad op06">opacity: 0.6</div>
+    <div class="caja-opacidad op03">opacity: 0.3</div>
+    <div class="caja-opacidad op01">opacity: 0.1 (texto casi ilegible)</div>
+    <p>Problema: el texto se vuelve transparente junto con el fondo.</p>
+
+    <h2>5. Solucion con RGBA (solo el fondo, no el texto)</h2>
+    <div class="caja-rgba">100% opacidad de fondo (texto siempre legible)</div>
+    <div class="caja-rgba rgba06">60% opacidad de fondo</div>
+    <div class="caja-rgba rgba03">30% opacidad de fondo</div>
+    <div class="caja-rgba rgba01">10% opacidad de fondo</div>
+
+    <h2>6. Texto en una caja transparente sobre imagen de fondo</h2>
+    <div class="background">
+        <div class="transbox">
+            <p>Este es un texto colocado dentro de una caja semi-transparente (rgba blanco al 60%), sobre una imagen de fondo repetida.</p>
+        </div>
+    </div>
+    <p>La caja externa tiene la imagen de fondo. La caja interna (transbox) tiene background-color con RGBA, dejando ver la imagen detras pero manteniendo el texto legible.</p>
+
+</body>
+</html>
