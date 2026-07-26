@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 32 - Navigation Bar</title>
+    <style>
+        h2 { margin-top: 45px; }
+        h3 { margin-top: 15px; }
+
+        .base-nav { list-style-type: none; margin: 0; padding: 0; }
+
+        .vertical {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            background-color: #f1f1f1;
+        }
+        .vertical li a {
+            display: block;
+            color: black;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+        .vertical li a:hover {
+            background-color: #555555;
+            color: white;
+        }
+        .vertical li a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .vertical-centrado {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            border: 1px solid #555555;
+        }
+        .vertical-centrado li {
+            text-align: center;
+            border-bottom: 1px solid #555555;
+        }
+        .vertical-centrado li:last-child { border-bottom: none; }
+        .vertical-centrado li a {
+            display: block;
+            color: black;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+        .vertical-centrado li a:hover { background-color: #555555; color: white; }
+
+        .horizontal-float {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333333;
+        }
+        .horizontal-float li { float: left; }
+        .horizontal-float li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .horizontal-float li a:hover { background-color: #111111; }
+
+        .horizontal-flex {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #333333;
+            display: flex;
+        }
+        .horizontal-flex li a {
+            display: block;
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .horizontal-flex li a:hover { background-color: #111111; }
+
+        .horizontal-centrado {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #333333;
+            display: flex;
+            justify-content: center;
+        }
+        .horizontal-centrado li a {
+            display: block;
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .horizontal-centrado li a:hover { background-color: #111111; }
+
+        .horizontal-flex li a.active { background-color: #04AA6D; }
+
+        .navbar-gris {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            border: 1px solid #e7e7e7;
+            background-color: #f3f3f3;
+        }
+        .navbar-gris li a {
+            display: block;
+            color: black;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .navbar-gris li a:hover { background-color: #ddd; }
+
+        .navbar-derecha { list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color: #333; }
+        .navbar-derecha li { float: left; }
+        .navbar-derecha li a { display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none; }
+        .navbar-derecha li a:hover { background-color: #111; }
+        .navbar-derecha li a.active { background-color: #04AA6D; }
+
+        .navbar-divisores { list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color: #333; }
+        .navbar-divisores li { float: left; border-right: 1px solid #bbbbbb; }
+        .navbar-divisores li:last-child { border-right: none; }
+        .navbar-divisores li a { display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none; }
+
+        .contenedor-sticky-nav {
+            height: 250px;
+            overflow-y: scroll;
+            border: 1px solid black;
+        }
+        .navbar-sticky { list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color: #333; position: sticky; top: 0; }
+        .navbar-sticky li { float: left; }
+        .navbar-sticky li a { display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <h1>Leccion CSS 32 - Navigation Bar</h1>
+
+    <h2>1. Base: lista sin viñetas ni margenes/padding</h2>
+    <ul class="base-nav">
+        <li><a href="css-01-introduccion.html">Home</a></li>
+        <li><a href="#news">News</a></li>
+    </ul>
+    <p>list-style-type:none quita las viñetas, margin:0 y padding:0 resetean el espacio por defecto del navegador. Esta es la base de todo navbar.</p>
+
+    <h2>2. Navbar Vertical basico</h2>
+    <ul class="vertical">
+        <li><a href="css-01-introduccion.html" class="active">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+
+    <h2>3. Navbar Vertical centrado con bordes</h2>
+    <ul class="vertical-centrado">
+        <li><a href="css-01-introduccion.html">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+
+    <h2>4. Navbar Horizontal con float</h2>
+    <ul class="horizontal-float">
+        <li><a href="css-01-introduccion.html">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+
+    <h2>5. Navbar Horizontal con Flexbox (moderno)</h2>
+    <ul class="horizontal-flex">
+        <li><a href="css-01-introduccion.html" class="active">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+
+    <h2>6. Navbar Horizontal centrado (flex + justify-content)</h2>
+    <ul class="horizontal-centrado">
+        <li><a href="css-01-introduccion.html">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+
+    <h2>7. Navbar gris con borde</h2>
+    <ul class="navbar-gris">
+        <li><a href="css-01-introduccion.html">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+
+    <h2>8. Alinear el ultimo enlace a la derecha</h2>
+    <ul class="navbar-derecha">
+        <li><a href="css-01-introduccion.html" class="active">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li style="float:right"><a href="#about">About</a></li>
+    </ul>
+
+    <h2>9. Divisores entre enlaces</h2>
+    <ul class="navbar-divisores">
+        <li><a href="css-01-introduccion.html">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+
+    <h2>10. Navbar Sticky (se pega al hacer scroll dentro del contenedor)</h2>
+    <div class="contenedor-sticky-nav">
+        <ul class="navbar-sticky">
+            <li><a href="css-01-introduccion.html">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+        <p style="padding:10px;">Contenido 1 - haz scroll dentro de este recuadro.</p>
+        <p style="padding:10px;">Contenido 2</p>
+        <p style="padding:10px;">Contenido 3</p>
+        <p style="padding:10px;">Contenido 4</p>
+        <p style="padding:10px;">Contenido 5</p>
+        <p style="padding:10px;">Contenido 6</p>
+    </div>
+
+    <h2>11. Navbar fijo (referencia, no aplicado a toda la pagina)</h2>
+    <p>Para que un navbar se quede fijo arriba o abajo de TODA la pagina (no solo un contenedor), se usa:</p>
+    <pre>
+ul {
+  position: fixed;
+  top: 0;    /* o bottom: 0; para fijarlo abajo */
+  width: 100%;
+}
+    </pre>
+    <p>No lo active en toda la pagina para no tapar el resto del contenido de este archivo de practica, pero la sintaxis es identica a position:sticky que ya usamos, solo que fixed nunca se comporta como relative.</p>
+
+</body>
+</html>
