@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 04 - How To (Formas de aplicar CSS)</title>
+    <style>
+        h1 {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Como agregar CSS</h1>
+    <p>Hay tres formas de insertar CSS en una pagina: externo, interno, y en linea.</p>
+
+    <h2>1. CSS Externo (ejemplo de referencia)</h2>
+    <p>Se conecta un archivo .css aparte usando &lt;link&gt; en el head:</p>
+    <pre>
+&lt;link rel="stylesheet" href="mystyle.css"&gt;
+    </pre>
+    <p>Y el archivo "mystyle.css" (sin ninguna etiqueta HTML adentro, solo CSS puro) se veria asi:</p>
+    <pre>
+body {
+  background-color: lightblue;
+}
+h1 {
+  color: navy;
+  margin-left: 20px;
+}
+    </pre>
+    <p>Ventaja: puedo cambiar el diseño de muchas paginas HTML a la vez, editando un solo archivo .css.</p>
+
+    <hr>
+
+    <h2 style="color:maroon; margin-left:40px;">2. CSS Interno</h2>
+    <p>El CSS interno se define dentro de una etiqueta &lt;style&gt; en el head. En este mismo archivo, el bloque &lt;style&gt; define que los &lt;h1&gt; sean color naranja (mira el titulo de arriba de todo).</p>
+
+    <hr>
+
+    <h2 style="color:blue; text-align:center;">3. CSS en linea (Inline)</h2>
+    <p style="color:red;">Este parrafo tiene su color aplicado directo en el atributo style="color:red;".</p>
+    <p>El CSS en linea se recomienda usar poco, porque mezcla contenido con presentacion.</p>
+
+    <hr>
+
+    <h2>Multiples hojas de estilo y orden de cascada</h2>
+    <p>Si un archivo externo dijera "h1 { color: navy; }" y el interno (como el de este archivo) dijera "h1 { color: orange; }", gana el que se lea DE ULTIMO en el head:</p>
+    <ul>
+        <li>Si el &lt;link&gt; externo va primero y el &lt;style&gt; interno despues → gana el interno (orange)</li>
+        <li>Si el &lt;style&gt; interno va primero y el &lt;link&gt; externo despues → gana el externo (navy)</li>
+    </ul>
+
+    <h3>Orden de prioridad en cascada (de mayor a menor):</h3>
+    <ol>
+        <li><b>Estilo en linea</b> (dentro del elemento HTML) — la mayor prioridad</li>
+        <li><b>Hojas de estilo externas e internas</b> (en el head) — prioridad media, gana la que se lea de ultimo</li>
+        <li><b>Estilos por defecto del navegador</b> — la menor prioridad</li>
+    </ol>
+    <p>Por eso, el parrafo de CSS en linea de arriba (rojo) siempre ganaria sobre cualquier regla externa o interna que tambien intentara ponerle color a los parrafos, sin importar el orden en que esten escritas.</p>
+
+</body>
+</html>
