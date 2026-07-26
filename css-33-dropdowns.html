@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 33 - Dropdowns</title>
+    <style>
+        h2 { margin-top: 45px; }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-right: 40px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 130px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 12px 16px;
+            z-index: 1;
+        }
+        .dropdown:hover .dropdown-content { display: block; }
+
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        .dropdown-menu-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-menu-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-menu-content a:hover { background-color: #f1f1f1; }
+        .dropdown:hover .dropdown-menu-content { display: block; }
+        .dropdown:hover .dropbtn { background-color: #3e8e41; }
+
+        .dropdown-derecha .dropdown-content { right: 0; }
+
+        .dropdown-imagen img { width: 100px; cursor: pointer; }
+        .dropdown-imagen-content {
+            display: none;
+            position: absolute;
+            z-index: 1;
+        }
+        .dropdown-imagen-content img { width: 300px; }
+        .dropdown-imagen:hover .dropdown-imagen-content { display: block; }
+
+        .navbar-dropdown {
+            overflow: hidden;
+            background-color: #333;
+        }
+        .navbar-dropdown a, .dropdown-nav .dropbtn-nav {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .dropdown-nav { float: left; overflow: hidden; }
+        .dropdown-nav .dropbtn-nav {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+            cursor: pointer;
+        }
+        .navbar-dropdown a:hover, .dropdown-nav:hover .dropbtn-nav { background-color: #555; }
+        .dropdown-nav-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-nav-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-nav-content a:hover { background-color: #ddd; }
+        .dropdown-nav:hover .dropdown-nav-content { display: block; }
+    </style>
+</head>
+<body>
+
+    <h1>Leccion CSS 33 - Dropdowns</h1>
+
+    <h2>1. Dropdown de texto simple</h2>
+    <div class="dropdown">
+        Pasa el mouse encima
+        <div class="dropdown-content">Hola Mundo! Este es el contenido oculto.</div>
+    </div>
+    <p>El contenedor .dropdown tiene position:relative, y el contenido oculto usa position:absolute + display:none, que cambia a block en :hover.</p>
+
+    <h2>2. Dropdown con boton y enlaces (menu)</h2>
+    <div class="dropdown">
+        <button class="dropbtn">Dropdown Menu</button>
+        <div class="dropdown-menu-content">
+            <a href="#">Enlace 1</a>
+            <a href="#">Enlace 2</a>
+            <a href="#">Enlace 3</a>
+        </div>
+    </div>
+
+    <h2>3. Dropdown alineado a la derecha</h2>
+    <div class="dropdown dropdown-derecha">
+        <button class="dropbtn">Alineado a la derecha</button>
+        <div class="dropdown-content">Este contenido se alinea hacia la derecha con right:0 en vez del comportamiento por defecto (izquierda).</div>
+    </div>
+
+    <h2>4. Dropdown con imagen</h2>
+    <div class="dropdown dropdown-imagen">
+        <img src="https://www.w3schools.com/css/img_5terre.jpg" alt="Miniatura">
+        <div class="dropdown-imagen-content">
+            <img src="https://www.w3schools.com/css/img_5terre.jpg" alt="Imagen grande">
+        </div>
+    </div>
+    <p>Pasa el mouse sobre la miniatura para ver la version grande.</p>
+
+    <h2>5. Dropdown dentro de un navbar</h2>
+    <div class="navbar-dropdown">
+        <a href="css-01-introduccion.html">Home</a>
+        <div class="dropdown-nav">
+            <button class="dropbtn-nav">Servicios</button>
+            <div class="dropdown-nav-content">
+                <a href="#">Diseño Web</a>
+                <a href="#">Desarrollo Backend</a>
+                <a href="#">Consultoria</a>
+            </div>
+        </div>
+        <a href="#contact">Contact</a>
+    </div>
+    <p style="clear:both; padding-top:10px;">Este navbar combina lo que aprendiste en la leccion anterior (navbar horizontal) con el dropdown de esta leccion.</p>
+
+</body>
+</html>
