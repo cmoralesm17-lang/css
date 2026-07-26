@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 27 - Align</title>
+    <style>
+        h2 { margin-top: 45px; }
+
+        .flex-completo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150px;
+            border: 3px solid green;
+            background-color: #f4f4f4;
+        }
+
+        .centrado-margin {
+            margin: auto;
+            width: 50%;
+            border: 3px solid green;
+            padding: 10px;
+        }
+
+        .texto-centrado { text-align: center; }
+
+        .imagen-centrada {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;
+        }
+
+        .contenedor-position { position: relative; height: 80px; border: 1px dashed gray; margin-bottom: 20px; }
+        .derecha-position {
+            position: absolute;
+            right: 0px;
+            width: 250px;
+            border: 3px solid green;
+            padding: 10px;
+            background-color: white;
+        }
+
+        .contenedor-float::after { content: ""; clear: both; display: table; }
+        .derecha-float {
+            float: right;
+            width: 250px;
+            border: 3px solid green;
+            padding: 10px;
+        }
+
+        .flex-vertical {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            border: 3px solid green;
+            background-color: #f4f4f4;
+        }
+
+        .grid-centrado {
+            display: grid;
+            place-items: center;
+            height: 200px;
+            border: 3px solid green;
+            background-color: #f4f4f4;
+        }
+
+        .contenedor-transform {
+            position: relative;
+            height: 200px;
+            border: 3px solid green;
+            background-color: #f4f4f4;
+        }
+        .contenedor-transform p {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Leccion CSS 27 - Align</h1>
+
+    <h2>1. Centrado completo (horizontal y vertical) con Flexbox</h2>
+    <div class="flex-completo">
+        <p>Estoy centrado horizontal y verticalmente</p>
+    </div>
+    <p>El metodo mas moderno y recomendado: display:flex + justify-content:center + align-items:center.</p>
+
+    <h2>2. Alineacion horizontal</h2>
+    <h3>margin: auto (centrar elementos de bloque)</h3>
+    <div class="centrado-margin">Este div esta centrado, con width:50% definido (sin width, margin:auto no hace nada).</div>
+
+    <h3>text-align: center (centrar texto dentro de un elemento)</h3>
+    <p class="texto-centrado">Este texto esta centrado.</p>
+
+    <h3>Centrar una imagen</h3>
+    <img class="imagen-centrada" src="https://www.w3schools.com/css/img_5terre.jpg" alt="Paisaje">
+    <p>La imagen es inline por defecto, por eso se le pone display:block antes de aplicar margin-left/right:auto.</p>
+
+    <h3>Alinear con position: absolute</h3>
+    <div class="contenedor-position">
+        <div class="derecha-position">Este div esta posicionado a la derecha con position:absolute.</div>
+    </div>
+
+    <h3>Alinear con float</h3>
+    <div class="contenedor-float">
+        <div class="derecha-float">Este div esta alineado a la derecha con float:right.</div>
+    </div>
+
+    <h2>3. Alineacion vertical</h2>
+    <h3>Centrado vertical con Flexbox</h3>
+    <div class="flex-vertical">
+        <p>Estoy centrado vertical y horizontalmente con flex.</p>
+    </div>
+
+    <h3>Centrado vertical con Grid</h3>
+    <div class="grid-centrado">
+        <p>Estoy centrado con display:grid y place-items:center.</p>
+    </div>
+
+    <h3>Centrado con position + transform (para elementos de tamaño desconocido)</h3>
+    <div class="contenedor-transform">
+        <p>Estoy centrado con position:absolute + transform:translate(-50%, -50%).</p>
+    </div>
+
+</body>
+</html>
