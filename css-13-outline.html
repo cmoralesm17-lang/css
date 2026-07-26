@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 13 - Outline</title>
+    <style>
+        h2 { margin-top: 40px; }
+        p.caja { padding: 5px; width: 250px; }
+
+        p.ex1 { padding: 5px; outline-style: solid; outline-color: green; outline-width: thin; }
+        p.ex2 { padding: 5px; outline-style: solid; outline-color: green; outline-width: medium; }
+        p.ex3 { padding: 5px; outline-style: solid; outline-color: green; outline-width: thick; }
+        p.ex4 { padding: 5px; outline-style: solid; outline-color: green; outline-width: 8px; }
+
+        p.color1 { border: 1px solid black; padding: 5px; outline-style: solid; outline-color: red; }
+        p.color2 { border: 1px solid black; padding: 5px; outline-style: dotted; outline-color: blue; }
+        p.color3 { border: 1px solid black; padding: 5px; outline-style: outset; outline-color: green; }
+        p.color4 { border: 1px solid black; padding: 5px; outline-style: solid; outline-color: invert; }
+        p.colorhex { border: 1px solid black; padding: 5px; outline-style: solid; outline-color: #ff0000; }
+        p.colorrgb { border: 1px solid black; padding: 5px; outline-style: solid; outline-color: rgb(255, 0, 0); }
+        p.colorhsl { border: 1px solid black; padding: 5px; outline-style: solid; outline-color: hsl(0, 100%, 50%); }
+
+        p.short1 { padding: 5px; outline: dashed; }
+        p.short2 { padding: 5px; outline: dotted red; }
+        p.short3 { padding: 5px; outline: 7px solid yellow; }
+        p.short4 { padding: 5px; outline: thick ridge pink; }
+
+        p.redondo1 { padding: 5px; outline: dashed; border-radius: 8px; }
+        p.redondo2 { padding: 5px; outline: dotted red; border-radius: 5px; }
+        p.redondo3 { padding: 5px; outline: 7px solid yellow; border-radius: 5px; }
+        p.redondo4 { padding: 5px; outline: thick ridge pink; border-radius: 8px; }
+
+        p.offset1 {
+            margin: 30px;
+            padding: 5px;
+            border: 1px solid black;
+            outline: 3px solid red;
+            outline-offset: 15px;
+        }
+        p.offset2 {
+            margin: 30px;
+            padding: 5px;
+            background: yellow;
+            border: 1px solid black;
+            outline: 3px solid red;
+            outline-offset: 15px;
+        }
+        p.offsetneg {
+            margin: 30px;
+            padding: 5px;
+            background: yellow;
+            border: 1px solid black;
+            outline: 3px solid red;
+            outline-offset: -5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Leccion CSS 13 - Outline</h1>
+
+    <h2>1. outline-width</h2>
+    <p class="ex1 caja">Outline thin</p>
+    <p class="ex2 caja">Outline medium</p>
+    <p class="ex3 caja">Outline thick</p>
+    <p class="ex4 caja">Outline 8px</p>
+
+    <h2>2. outline-color</h2>
+    <p class="color1 caja">Outline solid rojo</p>
+    <p class="color2 caja">Outline dotted azul</p>
+    <p class="color3 caja">Outline outset verde</p>
+    <p class="color4 caja">Outline solid invert (se invierte segun el fondo)</p>
+    <p class="colorhex caja">Outline con HEX #ff0000</p>
+    <p class="colorrgb caja">Outline con RGB rgb(255,0,0)</p>
+    <p class="colorhsl caja">Outline con HSL hsl(0,100%,50%)</p>
+
+    <h2>3. Propiedad abreviada (outline shorthand)</h2>
+    <p class="short1 caja">outline: dashed;</p>
+    <p class="short2 caja">outline: dotted red;</p>
+    <p class="short3 caja">outline: 7px solid yellow;</p>
+    <p class="short4 caja">outline: thick ridge pink;</p>
+
+    <h2>4. Outline con esquinas redondeadas</h2>
+    <p class="redondo1 caja">outline: dashed; border-radius: 8px;</p>
+    <p class="redondo2 caja">outline: dotted red; border-radius: 5px;</p>
+    <p class="redondo3 caja">outline: 7px solid yellow; border-radius: 5px;</p>
+    <p class="redondo4 caja">outline: thick ridge pink; border-radius: 8px;</p>
+    <p>El border-radius tambien redondea el outline, no solo el borde.</p>
+
+    <h2>5. outline-offset (separacion entre outline y borde)</h2>
+    <p class="offset1">Este parrafo tiene borde negro y outline rojo separado 15px hacia afuera del borde.</p>
+    <p class="offset2">Este tiene fondo amarillo, para notar que el espacio entre el borde y el outline es transparente (se ve el fondo de la pagina, no el amarillo).</p>
+
+    <h2>6. outline-offset con valor negativo</h2>
+    <p class="offsetneg">Este parrafo tiene outline-offset: -5px, asi que el outline rojo queda POR DENTRO del borde negro, en vez de por fuera.</p>
+
+    <h2>Diferencia clave: outline vs border</h2>
+    <p>El outline NO ocupa espacio en el layout (no empuja a otros elementos como el border si lo hace), y puede dibujarse por fuera del borde sin afectar el tamaño total de la caja. Por eso es muy usado para indicadores de foco/seleccion (ej. cuando haces clic en un boton o campo de formulario).</p>
+
+</body>
+</html>
