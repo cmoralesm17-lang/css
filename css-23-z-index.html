@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 23 - Z-index</title>
+    <style>
+        h2 { margin-top: 45px; }
+
+        .contenedor-imagen-texto {
+            position: relative;
+            width: 300px;
+        }
+        .contenedor-imagen-texto img {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: -1;
+            width: 100%;
+        }
+        .contenedor-imagen-texto h3 {
+            position: relative;
+            padding-top: 100px;
+        }
+
+        .container1 { position: relative; margin-bottom: 20px; }
+        .black-box {
+            position: relative;
+            z-index: 1;
+            border: 2px solid black;
+            height: 100px;
+            margin: 30px;
+        }
+        .gray-box {
+            position: absolute;
+            z-index: 3;
+            background: lightgray;
+            height: 60px;
+            width: 70%;
+            left: 50px;
+            top: 50px;
+        }
+        .green-box {
+            position: absolute;
+            z-index: 2;
+            background: lightgreen;
+            width: 35%;
+            left: 270px;
+            top: -15px;
+            height: 100px;
+        }
+
+        .container2 { position: relative; margin-bottom: 20px; }
+        .black-box-sin {
+            position: relative;
+            border: 2px solid black;
+            height: 100px;
+            margin: 30px;
+        }
+        .gray-box-sin {
+            position: absolute;
+            background: lightgray;
+            height: 60px;
+            width: 70%;
+            left: 50px;
+            top: 50px;
+        }
+        .green-box-sin {
+            position: absolute;
+            background: lightgreen;
+            width: 35%;
+            left: 270px;
+            top: -15px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Leccion CSS 23 - Z-index</h1>
+
+    <h2>1. z-index negativo (imagen detras del texto)</h2>
+    <div class="contenedor-imagen-texto">
+        <h3>Este es un encabezado</h3>
+        <img src="https://www.w3schools.com/css/img_5terre.jpg" alt="Paisaje">
+    </div>
+    <p>La imagen tiene z-index:-1, asi que queda detras del texto, aunque en el HTML este despues.</p>
+    <p><b>Nota importante:</b> z-index SOLO funciona en elementos posicionados (position distinto de static).</p>
+
+    <h2>2. Con z-index definido (controla el orden)</h2>
+    <div class="container1">
+        <div class="black-box">Caja negra (z-index: 1)</div>
+        <div class="gray-box">Caja gris (z-index: 3, la mas alta, queda encima de todas)</div>
+        <div class="green-box">Caja verde (z-index: 2)</div>
+    </div>
+    <p>Entre mas alto el z-index, mas "arriba" en la pila queda el elemento, sin importar el orden en que aparecen en el HTML.</p>
+
+    <h2>3. Sin z-index (orden segun el HTML)</h2>
+    <div class="container2">
+        <div class="black-box-sin">Caja negra</div>
+        <div class="gray-box-sin">Caja gris</div>
+        <div class="green-box-sin">Caja verde</div>
+    </div>
+    <p>Sin z-index especificado, los elementos se dibujan en el orden en que aparecen en el codigo HTML: el ultimo que se escribe queda por encima de los anteriores.</p>
+
+</body>
+</html>
