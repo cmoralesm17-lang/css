@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 30 - Pseudo-element</title>
+    <style>
+        h2 { margin-top: 45px; }
+
+        .primera-linea::first-line {
+            color: red;
+            font-variant: small-caps;
+            font-size: 19px;
+        }
+
+        .primera-letra::first-letter {
+            color: red;
+            font-size: xx-large;
+        }
+
+        p.intro::first-letter {
+            color: #ff0000;
+            font-size: 200%;
+        }
+
+        .combinado::first-letter {
+            color: red;
+            font-size: xx-large;
+        }
+        .combinado::first-line {
+            color: blue;
+            font-variant: small-caps;
+        }
+
+        h3.antes::before {
+            content: "\2605  ";
+            color: gold;
+        }
+
+        h3.despues::after {
+            content: "  \2605";
+            color: gold;
+        }
+
+        .contador::before {
+            content: "Nota: ";
+            font-weight: bold;
+            color: darkred;
+        }
+
+        ul.marcadores::marker {
+            color: red;
+            font-size: 23px;
+        }
+
+        .seleccion::selection {
+            color: red;
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Leccion CSS 30 - Pseudo-element</h1>
+
+    <h2>1. ::first-line (primera linea del texto)</h2>
+    <p class="primera-linea">Este parrafo tiene la primera linea en rojo, con small-caps y tamaño mas grande. El resto del texto sigue el estilo normal. Solo la PRIMERA linea completa recibe este estilo, sin importar cuantas lineas tenga el parrafo en total al mostrarse en el navegador.</p>
+
+    <h2>2. ::first-letter (primera letra del texto)</h2>
+    <p class="primera-letra">Esta es la primera letra grande y roja, como en los libros clasicos con letra capital al inicio del capitulo.</p>
+
+    <h2>3. Combinado con una clase HTML</h2>
+    <p class="intro">Este parrafo tiene la clase "intro", asi que su primera letra es roja y del doble de tamaño.</p>
+
+    <h2>4. Multiples pseudo-elementos combinados</h2>
+    <p class="combinado">Esta primera letra es roja y extra grande, el resto de la primera linea es azul en small-caps, y el resto del parrafo sigue en estilo normal, para que notes como se combinan first-letter y first-line en el mismo elemento sin conflicto.</p>
+
+    <h2>5. ::before (insertar contenido antes)</h2>
+    <h3 class="antes">Titulo con estrella antes</h3>
+
+    <h2>6. ::after (insertar contenido despues)</h2>
+    <h3 class="despues">Titulo con estrella despues</h3>
+
+    <h2>7. ::before con texto</h2>
+    <p class="contador">Recuerda guardar tu trabajo antes de cerrar el navegador.</p>
+
+    <h2>8. ::marker (estilo de los marcadores de lista)</h2>
+    <ul class="marcadores">
+        <li>Primer elemento</li>
+        <li>Segundo elemento</li>
+        <li>Tercer elemento</li>
+    </ul>
+
+    <h2>9. ::selection (estilo del texto seleccionado)</h2>
+    <p class="seleccion">Selecciona este texto con el mouse (arrastrando) para ver el color personalizado: fondo amarillo y texto rojo.</p>
+
+    <h2>10. ::backdrop (referencia, requiere un dialog)</h2>
+    <p>El pseudo-elemento ::backdrop estiliza el fondo detras de un &lt;dialog&gt; abierto (una ventana modal de HTML). No lo aplico aqui porque requiere JavaScript para abrir el dialog, pero la sintaxis es:</p>
+    <pre>dialog::backdrop {
+  background-color: lightgreen;
+}</pre>
+
+</body>
+</html>
