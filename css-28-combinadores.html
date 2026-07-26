@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leccion CSS 28 - Combinators</title>
+    <style>
+        h2 { margin-top: 45px; }
+        .caja { border: 1px solid gray; padding: 10px; margin-bottom: 5px; }
+
+        .caja1 div p { background-color: yellow; }
+
+        .caja2 div > p { background-color: yellow; }
+
+        .caja3 div + p { background-color: yellow; }
+
+        .caja4 div ~ p { background-color: yellow; }
+    </style>
+</head>
+<body>
+
+    <h1>Leccion CSS 28 - Combinators</h1>
+
+    <h2>1. Descendant combinator (espacio) - div p</h2>
+    <div class="caja1">
+        <p>Este p es hijo directo del div - SI se pinta amarillo.</p>
+        <div>
+            <p>Este p esta dentro de otro div (nieto) - TAMBIEN se pinta amarillo.</p>
+        </div>
+    </div>
+    <p>Este p esta FUERA del div - no se pinta.</p>
+    <p>El combinador de espacio selecciona TODOS los descendientes, sin importar cuantos niveles de profundidad.</p>
+
+    <h2>2. Child combinator (>) - div > p</h2>
+    <div class="caja2">
+        <p>Este p es hijo DIRECTO del div - SI se pinta amarillo.</p>
+        <div>
+            <p>Este p es nieto (hijo de un div interno, no del div principal) - NO se pinta.</p>
+        </div>
+    </div>
+    <p>Solo selecciona hijos directos (un nivel), no nietos ni descendientes mas profundos.</p>
+
+    <h2>3. Next sibling combinator (+) - div + p</h2>
+    <div class="caja3">
+        <div>Un div cualquiera</div>
+        <p>Este es el PRIMER p justo despues del div - SI se pinta amarillo.</p>
+        <p>Este es el SEGUNDO p (hermano, pero no el inmediato despues del div) - NO se pinta.</p>
+    </div>
+    <p>Solo selecciona el elemento que esta INMEDIATAMENTE despues, y solo uno.</p>
+
+    <h2>4. Subsequent-sibling combinator (~) - div ~ p</h2>
+    <div class="caja4">
+        <div>Un div cualquiera</div>
+        <p>Este p (el primero despues del div) - SI se pinta amarillo.</p>
+        <p>Este p (el segundo despues del div) - TAMBIEN se pinta amarillo.</p>
+        <p>Este p (el tercero) - TAMBIEN se pinta amarillo.</p>
+    </div>
+    <p>Selecciona TODOS los hermanos que vienen despues, no solo el inmediato.</p>
+
+    <h2>Resumen comparativo</h2>
+    <table border="1" style="border-collapse:collapse; width:100%;">
+        <tr style="background-color:#04AA6D; color:white;">
+            <th style="padding:8px;">Combinador</th>
+            <th style="padding:8px;">Simbolo</th>
+            <th style="padding:8px;">Que selecciona</th>
+        </tr>
+        <tr><td style="padding:8px;">Descendant</td><td style="padding:8px;">espacio</td><td style="padding:8px;">Todos los descendientes (hijos, nietos, etc.)</td></tr>
+        <tr><td style="padding:8px;">Child</td><td style="padding:8px;">&gt;</td><td style="padding:8px;">Solo hijos directos (un nivel)</td></tr>
+        <tr><td style="padding:8px;">Next sibling</td><td style="padding:8px;">+</td><td style="padding:8px;">Solo el hermano inmediatamente siguiente</td></tr>
+        <tr><td style="padding:8px;">Subsequent-sibling</td><td style="padding:8px;">~</td><td style="padding:8px;">Todos los hermanos que vienen despues</td></tr>
+    </table>
+
+</body>
+</html>
